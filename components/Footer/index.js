@@ -12,6 +12,7 @@ export default function Footer() {
             src={logo}
             width={180}
             height={80 / ratio}
+            alt="logo"
             style={{ filter: 'brightness(1.3) grayscale(.6)', opacity: '.6' }}
           />
         </div>
@@ -32,6 +33,7 @@ export default function Footer() {
           justify-content: space-between;
           align-items: center;
           padding: 1rem;
+          margin-top: 300px;
         }
         small {
           font-size: 0.8rem;

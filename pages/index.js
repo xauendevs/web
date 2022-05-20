@@ -1,11 +1,12 @@
-import Head from 'next/head'
-import Image from 'next/image'
+import Charlantes from 'components/Charlantes'
+import Header from 'components/Header'
+import PostsListHome from 'components/PostsListHome'
+import SectionHome from 'components/SectionHome'
+import WhoWeAre from 'components/Whoweare'
 import fs from 'fs'
 import matter from 'gray-matter'
-import Link from 'next/link'
-import Header from 'components/Header'
-import WhoWeAre from 'components/Whoweare'
-import Charlantes from 'components/Charlantes'
+import Head from 'next/head'
+
 export default function Home({ posts }) {
   return (
     <>
@@ -15,8 +16,16 @@ export default function Home({ posts }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <WhoWeAre />
-      <Charlantes />
+
+      <SectionHome title={'Who We Are?'}>
+        <WhoWeAre />
+      </SectionHome>
+      <SectionHome title={'Charlantes'}>
+        <Charlantes />
+      </SectionHome>
+      <SectionHome title={'Posts'}>
+        <PostsListHome posts={posts} />
+      </SectionHome>
     </>
   )
 }
@@ -27,7 +36,7 @@ export async function getStaticProps() {
     const slug = fileName.replace('.md', '')
     const readFile = fs.readFileSync(`posts/${fileName}`, 'utf-8')
     const { data: frontmatter } = matter(readFile)
-
+    console.log(frontmatter)
     return {
       slug,
       frontmatter
