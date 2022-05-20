@@ -29,23 +29,23 @@ Post.Layout = BlogLayout
 export default Post
 
 export async function getStaticProps({ params: { slug } }) {
-  const requestOptions = {
-    method: 'GET',
-    headers: {
-      Authorization: `Bearer 78285cf334af1b97c78cd9d263298e7f7fd001dd4ea5e517435f6ea228440b1cfca2fedbb029ca02319fdf3a8b8823c59665a690f55cda2ff4ea404c97e900a48e26883de2ec489b5b2d2027aba2967e030db4e7a7e5a8a314d940d25e9390d427983f42a165b7108ed3ac6c8bd5132f8d8bd615b4e8e658edeeaf27ba8ae51d`
-    }
-  }
-  const t = await (
-    await fetch('http://localhost:1337/api/posts/1', requestOptions)
-  ).text()
-  const test = JSON.parse(t).data.attributes.content
+  // const requestOptions = {
+  //   method: 'GET',
+  //   headers: {
+  //     Authorization: `Bearer 78285cf334af1b97c78cd9d263298e7f7fd001dd4ea5e517435f6ea228440b1cfca2fedbb029ca02319fdf3a8b8823c59665a690f55cda2ff4ea404c97e900a48e26883de2ec489b5b2d2027aba2967e030db4e7a7e5a8a314d940d25e9390d427983f42a165b7108ed3ac6c8bd5132f8d8bd615b4e8e658edeeaf27ba8ae51d`
+  //   }
+  // }
+  // const t = await (
+  //   await fetch('http://localhost:1337/api/posts/1', requestOptions)
+  // ).text()
+  // const test = JSON.parse(t).data.attributes.content
 
   const fileName = fs.readFileSync(`posts/${slug}.md`, 'utf-8')
   const { data: frontmatter, content } = matter(fileName)
   return {
     props: {
       frontmatter,
-      content: test
+      content
     }
   }
 }
