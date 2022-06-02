@@ -2,17 +2,21 @@ export default function WhoWeAre() {
   return (
     <>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-        non eros non lorem viverra gravida. In hac habitasse platea dictumst.
-        Praesent vel malesuada lacus, gravida tristique purus. Integer laoreet
-        nibh ut tellus congue, id placerat odio facilisis. Vestibulum viverra
-        quam lobortis, lacinia nibh vitae, mattis massa.
+        <strong>XauenDevs</strong> nace en 2017 con el nombre de JaénDevelopers,
+        una comunidad de{' '}
+        <strong>desarrolladores de software en la provincia de Jaén</strong>. El
+        objetivo principal de <strong>XauenDevs</strong> es difundir
+        conocimiento sobre desarrollo y tecnología en general. Y para ello
+        organiza charlas mensuales de diferentes temas y de profesionles de
+        distintos campos pero siempre relacionados con las tecnología.
       </p>
       <p>
-        Aenean accumsan posuere tellus, nec facilisis lectus. Cras tincidunt
-        luctus lacus et elementum. Donec quam sem, tristique ut ultricies quis,
-        mattis et purus. Sed tristique sollicitudin ipsum, cursus vulputate
-        ligula sollicitudin in.
+        Estas charlas, denominadas <strong>Pivo&Code</strong>, aparte de tratar
+        distintos temas uno de los puntos más atractivos son los{' '}
+        <strong>networking</strong>, donde estudiantes/docentes/profesionales
+        del sector pueden compartir conocimientos y experiencias. Además de la
+        sinergía que se crea entre los asistentes, se crean oportunidades
+        laborales.
       </p>
 
       <style jsx>{``}</style>

@@ -6,7 +6,7 @@ export default function Header() {
       <section>
         <div className="header-wrapper">
           <div className="title">
-            <span>XAEN</span>
+            <span>XAUEN</span>
             <span>DEVS</span>
           </div>
           <Typewriter
@@ -16,6 +16,9 @@ export default function Header() {
                 .typeString('Bella ciudad de luz')
                 .pauseFor(1000)
                 .deleteChars(3)
+                .typeString('tecnología')
+                .pauseFor(1000)
+                .deleteChars(10)
                 .typeString('desarrollo...')
                 .start()
             }}
@@ -50,6 +53,7 @@ export default function Header() {
         .title {
           display: flex;
         }
+
         .title span + span {
           font-weight: 100;
         }

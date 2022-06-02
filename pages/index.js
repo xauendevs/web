@@ -7,7 +7,7 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import Head from 'next/head'
 
-export default function Home({ posts }) {
+export default function Home({ posts, charlantes }) {
   return (
     <>
       <Head>
@@ -20,10 +20,10 @@ export default function Home({ posts }) {
       <SectionHome title={'Who We Are?'}>
         <WhoWeAre />
       </SectionHome>
-      <SectionHome title={'Charlantes'}>
-        <Charlantes />
+      <SectionHome className={'charlantes'} title={'Charlantes'}>
+        <Charlantes charlantes={charlantes} />
       </SectionHome>
-      <SectionHome title={'Posts'}>
+      <SectionHome className={'blog'} title={'Últimos Posts'}>
         <PostsListHome posts={posts} />
       </SectionHome>
     </>
@@ -31,21 +31,40 @@ export default function Home({ posts }) {
 }
 
 export async function getStaticProps() {
-  const files = fs.readdirSync('posts')
-  const posts = files.map((fileName) => {
+  const charlantes = getData('charlantes')
+    .sort(function () {
+      return 0.234 - Math.random()
+    })
+    .slice(0, 5)
+
+  let posts = getData('posts')
+
+  posts = posts
+    .sort((a, b) => {
+      return new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
+    })
+    .slice(0, 3)
+
+  return {
+    props: {
+      posts,
+      charlantes
+    }
+  }
+}
+
+function getData(type) {
+  const files = fs.readdirSync(type)
+  let items = files.map((fileName) => {
     const slug = fileName.replace('.md', '')
-    const readFile = fs.readFileSync(`posts/${fileName}`, 'utf-8')
+    const readFile = fs.readFileSync(`${type}/${fileName}`, 'utf-8')
     const { data: frontmatter } = matter(readFile)
-    console.log(frontmatter)
+
     return {
       slug,
       frontmatter
     }
   })
 
-  return {
-    props: {
-      posts
-    }
-  }
+  return items
 }

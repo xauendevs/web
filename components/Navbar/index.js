@@ -37,7 +37,8 @@ export default function Navbar() {
         <div className="navbar__logo">
           <Link href="/">
             <a>
-              <img src="/img/logo.webp" alt="logo" />
+              <span>xauen</span>
+              <span>devs</span>
             </a>
           </Link>
         </div>
@@ -45,17 +46,22 @@ export default function Navbar() {
           <ul>
             <li>
               <Link href="/">
-                <a>home</a>
+                <a>inicio</a>
               </Link>
             </li>
             <li>
               <Link href="/about">
-                <a>about</a>
+                <a>pivoandcode</a>
               </Link>
             </li>
             <li>
-              <Link href="/contact">
-                <a>contact</a>
+              <Link href="#charlantes">
+                <a>charlantes</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="#blog">
+                <a>blog</a>
               </Link>
             </li>
           </ul>
@@ -72,7 +78,7 @@ export default function Navbar() {
           align-items: center;
           padding: 0 1rem;
           /* From https://css.glass */
-          background: rgba(255, 255, 255, 0.9);
+          background: rgba(0, 0, 0, 0.8);
 
           box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
           backdrop-filter: blur(5px);
@@ -93,9 +99,27 @@ export default function Navbar() {
           display: flex;
           align-items: center;
         }
-        .navbar__logo img {
-          height: 40px;
-          margin-right: 1rem;
+        .navbar__logo a {
+          font-size: 2rem;
+          font-weight: 100;
+          background: #7db392; /* fallback for old browsers */
+          background: -webkit-linear-gradient(
+            to right,
+            #7db392 20%,
+            #345a7c
+          ); /* Chrome 10-25, Safari 5.1-6 */
+          background: linear-gradient(
+            to right,
+            #7db392 10%,
+            #345a7c
+          ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+        }
+
+        .navbar__logo a span:first-child {
+          font-weight: bold;
         }
         .navbar__menu {
           display: flex;
@@ -112,12 +136,13 @@ export default function Navbar() {
           margin-right: 1rem;
         }
         .navbar__menu ul li a {
-          color: #000;
+          color: #dcdcdc;
           text-decoration: none;
-          font-size: 1.2rem;
+          font-size: 0.9rem;
+          transition: all 0.3s ease-in-out;
         }
         .navbar__menu ul li a:hover {
-          color: #000;
+          color: #7db392;
         }
       `}</style>
     </>

@@ -6,6 +6,7 @@ export default function PostsListHome({ posts }) {
       <div className="card-container">
         {posts.map(({ slug, frontmatter }) => (
           <PostCard
+            key={slug}
             title={frontmatter.title}
             slug={slug}
             date={frontmatter.date}
@@ -15,6 +16,7 @@ export default function PostsListHome({ posts }) {
           />
         ))}
       </div>
+
       <style jsx>{`
         .card-container {
           width: 100%;

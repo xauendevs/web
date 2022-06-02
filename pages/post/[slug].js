@@ -1,5 +1,6 @@
 import fs from 'fs'
 import matter from 'gray-matter'
+import hljs from 'highlight.js'
 import BlogLayout from 'layouts/blog_layout'
 import md from 'markdown-it'
 import Head from 'next/head'
@@ -13,7 +14,23 @@ const Post = ({ frontmatter, content }) => {
       <div className="content">
         <h1>Post</h1>
         <h1>{frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: md().render(content) }} />
+        <div
+          dangerouslySetInnerHTML={{
+            __html: md({
+              langPrefix: 'hljs ',
+              highlight: function (str, lang) {
+                if (lang && hljs.getLanguage(lang)) {
+                  try {
+                    console.log('por ')
+                    return hljs.highlight(str, { language: lang }).value
+                  } catch (__) {}
+                }
+
+                return '' // use external default escaping
+              }
+            }).render(content)
+          }}
+        />
       </div>
       <style jsx>{`
         .content {

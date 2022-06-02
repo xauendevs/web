@@ -29,8 +29,10 @@ export default function PostCard({
               by <a href="">{author}</a>
             </div>
             <div className="card-tags">
-              {tags.map((tag) => (
-                <a className="card-tag tag-news">{tag}</a>
+              {tags.slice(0, 6).map((tag) => (
+                <a key={tag} className="card-tag tag-news">
+                  {tag}
+                </a>
               ))}
             </div>
           </div>

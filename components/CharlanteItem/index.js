@@ -1,13 +1,14 @@
 export default function CharlanteItem({
   name,
-  photo = 'https://picsum.photos/200/300'
+  photo = 'https://picsum.photos/200/300',
+  onClick
 }) {
   return (
     <>
       <div
         className="charlante-item"
         style={{
-          'background-image': 'url(' + photo + ')'
+          backgroundImage: 'url(' + photo + ')'
         }}
       >
         <span>{name} </span>
@@ -17,7 +18,6 @@ export default function CharlanteItem({
           height: 150px;
           width: 150px;
           border-radius: 50%;
-
           background-size: cover;
           transition: all 0.3s ease;
           cursor: pointer;
