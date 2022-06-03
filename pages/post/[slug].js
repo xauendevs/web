@@ -10,6 +10,14 @@ const Post = ({ frontmatter, content }) => {
     <>
       <Head>
         <title>{frontmatter.title}</title>
+        <meta
+          property="og:image"
+          content={`https://xauendevs.vercel.app/${frontmatter.image}`}
+        />
+        <meta
+          property="og:description"
+          content={`${frontmatter.description}`}
+        />
       </Head>
       <div className="content">
         <h1>Post</h1>

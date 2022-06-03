@@ -1,10 +1,11 @@
 import Github from 'components/Icons/Github'
 import Instagram from 'components/Icons/Instagram'
 import Twitter from 'components/Icons/Twitter'
+import Discord from 'components/Icons/Discord'
 import Image from 'next/image'
-import Link from 'next/link'
 import logo from 'public/img/logo.webp'
 import { useState } from 'react'
+
 export default function Footer() {
   const [ratio, setRatio] = useState(16 / 9)
   return (
@@ -19,6 +20,9 @@ export default function Footer() {
           </a>
           <a href="https://instagram.com/jaendevelopers" target={'_blank'}>
             <Instagram width={'25'} fill={'#dcdcdc'} height={'25'}></Instagram>
+          </a>
+          <a href="https://discord.gg/69cNGbQa" target={'_blank'}>
+            <Discord width={'25'} fill={'#dcdcdc'} height={'25'} />
           </a>
         </div>
         <div className="logo">
