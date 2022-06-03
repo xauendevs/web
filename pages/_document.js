@@ -17,7 +17,7 @@ export default function Document() {
         />
         <meta
           property="og:image"
-          content="https://xauendevs.vercel.app/img/social/twitter.jpg"
+          content="https://xauendevs.vercel.app/img/social/twitter.png"
         />
         <meta
           property="og:image:alt"
