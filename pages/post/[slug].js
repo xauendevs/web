@@ -14,13 +14,10 @@ const Post = ({ slug, frontmatter, content }) => {
           property="og:image"
           content={`https://xauendevs.vercel.app${frontmatter.image}`}
         />
-        <meta
-          property="og:description"
-          content={`${frontmatter.description}`}
-        />
+        <meta property="og:description" content={`${frontmatter.metaDesc}`} />
 
         <title>XauenDevs 🫒 {frontmatter.title}</title>
-        <meta name="description" content={`${frontmatter.description}`} />
+        <meta name="description" content={`${frontmatter.metaDesc}`} />
 
         <meta
           property="og:url"
@@ -31,10 +28,7 @@ const Post = ({ slug, frontmatter, content }) => {
           property="og:title"
           content={`XauenDevs 🫒 ${frontmatter.title}`}
         />
-        <meta
-          property="og:description"
-          content={`${frontmatter.description}`}
-        />
+        <meta property="og:description" content={`${frontmatter.metaDesc}`} />
         <meta
           property="og:image"
           content={`https://xauendevs.vercel.app${frontmatter.image}`}
@@ -54,10 +48,7 @@ const Post = ({ slug, frontmatter, content }) => {
           name="twitter:title"
           content={`XauenDevs 🫒 ${frontmatter.title}`}
         />
-        <meta
-          name="twitter:description"
-          content={`${frontmatter.description}`}
-        />
+        <meta name="twitter:description" content={`${frontmatter.metaDesc}`} />
         <meta
           name="twitter:image"
           content={`https://xauendevs.vercel.app${frontmatter.image}`}
