@@ -22,12 +22,11 @@ const Post = ({ frontmatter, content }) => {
       <div className="content">
         <div className="header-post">
           <div className="header-post-image">
-            <h1>{frontmatter.title}</h1>
             <img src={frontmatter.image} alt={frontmatter.title} />
           </div>
           <div className="header-post-description">
-            <small>Alberto Tejero</small>
-            <small>06/06/22</small>
+            <small> {frontmatter.author}</small>
+            <small>{frontmatter.date}</small>
             <small>
               {frontmatter.tags.map((tag, index) => {
                 return `#${tag} `
@@ -79,6 +78,9 @@ const Post = ({ frontmatter, content }) => {
           flex-direction: column;
           width: 100%;
           align-items: center;
+        }
+        .content-post img {
+          width: 100%;
         }
       `}</style>
     </>
