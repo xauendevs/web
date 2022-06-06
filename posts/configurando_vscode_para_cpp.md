@@ -3,7 +3,7 @@ title: 'Configurando VS Code para C++'
 metaTitle: 'Configurando VS Code para C++'
 author: 'Alejandro Charte Luque'
 metaDesc: 'Configurando VS Code para C++'
-image: img/header.png
+image: img/header_configurando_vscode_para_cpp.png
 date: '2022-06-06'
 tags:
   - vscode
