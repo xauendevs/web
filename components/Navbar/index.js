@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false)
   const [show, setShow] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
 
@@ -66,7 +67,40 @@ export default function Navbar() {
             </li>
           </ul>
         </div>
+        <div className="navbar__menu_hamburguer">
+          <button
+            className={`menu-toggle ${isOpen ? 'is-active' : ''}`}
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            Menu
+          </button>
+        </div>
+        <div className={`navbar__menu_mobile ${isOpen ? 'is-active' : ''}`}>
+          <ul>
+            <li>
+              <Link href="/">
+                <a onClick={() => setIsOpen(false)}>inicio</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/about">
+                <a onClick={() => setIsOpen(false)}>pivoandcode</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/#charlantes">
+                <a onClick={() => setIsOpen(false)}>charlantes</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/blog">
+                <a onClick={() => setIsOpen(false)}>blog</a>
+              </Link>
+            </li>
+          </ul>
+        </div>
       </nav>
+
       <style jsx>{`
         .navbar {
           display: flex;
@@ -143,6 +177,94 @@ export default function Navbar() {
         }
         .navbar__menu ul li a:hover {
           color: #7db392;
+        }
+        .navbar__menu_mobile {
+          display:flex;
+          position:absolute;
+          top:0;
+          left:0;
+          bottom:0;
+          right:0;  
+          transform:translateX(-100%);
+
+          height: calc(100vh);
+
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          position: fixed;
+          background: black;
+          z-index: 1;
+          width: 100vw;
+          color: white;
+          transition: all 0.3s ease-in-out;
+        }
+
+        .navbar__menu_mobile.is-active {
+          display: flex;
+          transform: translateX(0);
+
+        }
+        .navbar__menu_hamburguer{
+          display:none;
+          z-index: 2;
+        }
+        .menu-toggle {
+          position: relative;
+          display: block;
+          width: 25px;
+          height: 18px;
+          background: transparent;
+          border-top: 2px solid;
+          border-bottom: 2px solid;
+          color: #fcfcfc;
+          font-size: 0;
+          transition: all 0.25s ease-in-out;
+        }
+        .menu-toggle:before, .menu-toggle:after {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 2px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          background: currentColor;
+          transform: translate(-50%, -50%);
+          transition: transform 0.25s ease-in-out;
+        }
+
+        button:hover {
+          color: #fcfcfc;
+        }
+
+        button.is-active {
+          border-color: transparent;
+        }
+        button.is-active:before {
+          transform: translate(-50%, -50%) rotate(45deg);
+        }
+        button.is-active:after {
+          transform: translate(-50%, -50%) rotate(-45deg);
+        }
+
+
+        button {
+          border: none;
+          cursor: pointer;
+          outline: none;
+        }
+        @media (max-width: 768px) {
+          .navbar__logo a {
+            font-size: 1.5rem;
+          }
+        }
+        @media (max-width: 576px) {
+            .navbar__menu {
+              display:none
+            }
+            .navbar__menu_hamburguer{
+          display:block
         }
       `}</style>
     </>

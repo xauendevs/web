@@ -61,6 +61,10 @@ export default function Header() {
         .typewriter span {
           font-weight: 200;
         }
+        @media (max-width: 768px) {
+          span {
+          font-size: 3.5rem;
+        }
       `}</style>
     </>
   )

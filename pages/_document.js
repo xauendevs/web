@@ -4,6 +4,7 @@ export default function Document() {
   return (
     <Html lang="es">
       <Head>
+        <meta name="theme-color" content="#4285f4" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"

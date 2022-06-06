@@ -28,6 +28,11 @@ export default function Charlantes({ charlantes, isHome }) {
           gap: 40px;
           flex-wrap: wrap;
         }
+
+        @media (max-width: 768px) {
+          .list-charlantes {
+            justify-content: center;
+          }
       `}</style>
     </>
   )

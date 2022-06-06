@@ -42,6 +42,11 @@ export default function SectionHome({ title, children, className, id }) {
           left: 50%;
           transform: translateX(-50%);
         }
+
+        @media (max-width: 768px) {
+          section {
+            padding: 1rem !important;
+          }
       `}</style>
     </>
   )
