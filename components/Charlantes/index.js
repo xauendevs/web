@@ -1,7 +1,13 @@
 import CharlanteItem from 'components/CharlanteItem'
 import LinkSection from 'components/LinkSection'
 
-export default function Charlantes({ charlantes }) {
+export default function Charlantes({ charlantes, isHome }) {
+  let linkToBlog = <></>
+  if (isHome) {
+    linkToBlog = (
+      <LinkSection link={'/charlantes'} text={'Ver todos los charlantes'} />
+    )
+  }
   return (
     <>
       <div className="list-charlantes">
@@ -13,7 +19,7 @@ export default function Charlantes({ charlantes }) {
           />
         ))}
       </div>
-      <LinkSection link={'/charlantes'} text={'Ver todos los charlantes'} />
+      {linkToBlog}
 
       <style jsx>{`
         .list-charlantes {

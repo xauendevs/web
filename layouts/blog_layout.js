@@ -10,7 +10,7 @@ export default function BlogLayout({ children }) {
         .container {
           display: flex;
           justify-content: center;
-          margin-bottom: 300px;
+          margin-bottom: 200px;
         }
         main {
           width: 100%;

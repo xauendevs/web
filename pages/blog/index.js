@@ -18,7 +18,7 @@ export default function Blog({ posts }) {
           display: flex;
           justify-content: center;
           flex-direction: column;
-          margin-bottom: 300px;
+          margin-bottom: 200px;
         }
         h1 {
           text-align: center;

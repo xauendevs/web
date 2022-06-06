@@ -52,7 +52,7 @@ export default function Home({ posts, charlantes }) {
         <WhoWeAre />
       </SectionHome>
       <SectionHome className={'charlantes'} title={'Charlantes'}>
-        <Charlantes charlantes={charlantes} />
+        <Charlantes charlantes={charlantes} isHome={'true'} />
       </SectionHome>
       <SectionHome className={'blog'} title={'Últimos Posts'}>
         <PostsListHome isHome={'true'} posts={posts} />

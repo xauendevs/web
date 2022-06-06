@@ -5,6 +5,7 @@ import Discord from 'components/Icons/Discord'
 import Image from 'next/image'
 import logo from 'public/img/logo.webp'
 import { useState } from 'react'
+import Link from 'next/link'
 
 export default function Footer() {
   const [ratio, setRatio] = useState(16 / 9)
@@ -15,7 +16,7 @@ export default function Footer() {
           <a href="https://twitter.com/jaendevelopers" target={'_blank'}>
             <Twitter width={'25'} fill={'#dcdcdc'} height={'25'}></Twitter>
           </a>
-          <a href="https://github.com/xaendevs" target={'_blank'}>
+          <a href="https://github.com/xauendevs" target={'_blank'}>
             <Github width={'25'} fill={'#dcdcdc'} height={'25'}></Github>
           </a>
           <a href="https://instagram.com/jaendevelopers" target={'_blank'}>
@@ -26,13 +27,12 @@ export default function Footer() {
           </a>
         </div>
         <div className="logo">
-          <Image
-            src={logo}
-            width={180}
-            height={80 / ratio}
-            alt="logo"
-            style={{ filter: 'brightness(1.3) grayscale(.6)', opacity: '.6' }}
-          />
+          <Link href="/">
+            <a>
+              <span>xauen</span>
+              <span>devs</span>
+            </a>
+          </Link>
         </div>
         <small>
           {' '}
@@ -41,7 +41,7 @@ export default function Footer() {
       </section>
       <style jsx>{`
         section {
-          height: 300px;
+          height: 200px;
           position: fixed;
           background-color: black;
           bottom: 0px;
@@ -76,6 +76,24 @@ export default function Footer() {
         }
         .rrss-container a:hover {
           background-color: #ffffff21;
+        }
+        .logo a {
+          font-size: 2rem;
+          font-weight: 100;
+          background: #7db392; /* fallback for old browsers */
+          background: -webkit-linear-gradient(
+            to right,
+            #7db392 20%,
+            #345a7c
+          ); /* Chrome 10-25, Safari 5.1-6 */
+          background: linear-gradient(
+            to right,
+            #7db392 10%,
+            #345a7c
+          ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
         }
       `}</style>
     </>
