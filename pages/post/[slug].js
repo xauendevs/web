@@ -20,16 +20,30 @@ const Post = ({ frontmatter, content }) => {
         />
       </Head>
       <div className="content">
-        <h1>Post</h1>
-        <h1>{frontmatter.title}</h1>
+        <div className="header-post">
+          <div className="header-post-image">
+            <h1>{frontmatter.title}</h1>
+            <img src={frontmatter.image} alt={frontmatter.title} />
+          </div>
+          <div className="header-post-description">
+            <small>Alberto Tejero</small>
+            <small>06/06/22</small>
+            <small>
+              {frontmatter.tags.map((tag, index) => {
+                return `#${tag} `
+              })}
+            </small>
+            <h1>{frontmatter.title}</h1>
+          </div>
+        </div>
         <div
+          className="content-post"
           dangerouslySetInnerHTML={{
             __html: md({
               langPrefix: 'hljs ',
               highlight: function (str, lang) {
                 if (lang && hljs.getLanguage(lang)) {
                   try {
-                    console.log('por ')
                     return hljs.highlight(str, { language: lang }).value
                   } catch (__) {}
                 }
@@ -41,9 +55,30 @@ const Post = ({ frontmatter, content }) => {
         />
       </div>
       <style jsx>{`
-        .content {
-          background: white;
-          margin-bottom: 300px;
+        .content-post {
+          padding: 1rem 10rem;
+        }
+        .header-post-image {
+          width: 100%;
+          position: relative;
+          padding-top: 42%;
+        }
+
+        .header-post-image img {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+        .header-post-description {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          align-items: center;
         }
       `}</style>
     </>

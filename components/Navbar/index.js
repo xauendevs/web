@@ -55,7 +55,7 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
-              <Link href="#charlantes">
+              <Link href="/#charlantes">
                 <a>charlantes</a>
               </Link>
             </li>

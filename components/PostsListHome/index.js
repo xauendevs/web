@@ -1,6 +1,11 @@
+import LinkSection from 'components/LinkSection'
 import PostCard from 'components/PostCard'
 
-export default function PostsListHome({ posts }) {
+export default function PostsListHome({ posts, isHome }) {
+  let linkToBlog = <></>
+  if (isHome) {
+    linkToBlog = <LinkSection link={'/blog'} text={'Ver todos los posts'} />
+  }
   return (
     <>
       <div className="card-container">
@@ -16,7 +21,7 @@ export default function PostsListHome({ posts }) {
           />
         ))}
       </div>
-
+      {linkToBlog}
       <style jsx>{`
         .card-container {
           width: 100%;

@@ -1,12 +1,13 @@
 ---
 title: 'Nueva imagen y nueva temporada'
-metaTitle: 'Danieeel'
-author: 'Daniel Redondo'
-metaDesc: 'Después de tanto tiempo de inactividad por el COVID-19, queremos volver y lo queremos hacer renovando la imagen de JaénDevelopers que a partir de ahora se denominará XaenDevs. Volvemos con'
+metaTitle: 'Nueva imagen y nueva temporada'
+author: 'Alberto Tejero'
+metaDesc: 'Después de tanto tiempo de inactividad por el COVID-19, queremos volver y lo queremos hacer renovando la imagen de JaénDevelopers que a partir de ahora se denominará XaenDevs.'
 image: img/header.png
-date: '2022-05-19'
+date: '2022-06-06'
 tags:
-  - nextjs
+  - xauendevs
+  - general
 ---
 
 ## Probando pintar codigo en los posts

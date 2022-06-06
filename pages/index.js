@@ -24,7 +24,7 @@ export default function Home({ posts, charlantes }) {
         <Charlantes charlantes={charlantes} />
       </SectionHome>
       <SectionHome className={'blog'} title={'Últimos Posts'}>
-        <PostsListHome posts={posts} />
+        <PostsListHome isHome={'true'} posts={posts} />
       </SectionHome>
     </>
   )
