@@ -12,7 +12,7 @@ const Post = ({ frontmatter, content }) => {
         <title>{frontmatter.title}</title>
         <meta
           property="og:image"
-          content={`https://xauendevs.vercel.app/${frontmatter.image}`}
+          content={`https://xauendevs.vercel.app${frontmatter.image}`}
         />
         <meta
           property="og:description"
@@ -38,18 +38,21 @@ const Post = ({ frontmatter, content }) => {
         <div
           className="content-post"
           dangerouslySetInnerHTML={{
-            __html: md({
-              langPrefix: 'hljs ',
-              highlight: function (str, lang) {
-                if (lang && hljs.getLanguage(lang)) {
-                  try {
-                    return hljs.highlight(str, { language: lang }).value
-                  } catch (__) {}
-                }
+            __html:
+              md({
+                langPrefix: 'hljs ',
 
-                return '' // use external default escaping
-              }
-            }).render(content)
+                highlight: function (str, lang) {
+                  if (lang && hljs.getLanguage(lang)) {
+                    try {
+                      return hljs.highlight(str, { language: lang }).value
+                    } catch (__) {}
+                  }
+
+                  return '' // use external default escaping
+                }
+              }).render(content) +
+              '<style>.content-post img{max-width:100%;}</style>'
           }}
         />
       </div>
@@ -78,9 +81,7 @@ const Post = ({ frontmatter, content }) => {
           flex-direction: column;
           width: 100%;
           align-items: center;
-        }
-        .content-post img {
-          width: 100%;
+          margin-top: 20px;
         }
       `}</style>
     </>
@@ -91,17 +92,6 @@ Post.Layout = BlogLayout
 export default Post
 
 export async function getStaticProps({ params: { slug } }) {
-  // const requestOptions = {
-  //   method: 'GET',
-  //   headers: {
-  //     Authorization: `Bearer 78285cf334af1b97c78cd9d263298e7f7fd001dd4ea5e517435f6ea228440b1cfca2fedbb029ca02319fdf3a8b8823c59665a690f55cda2ff4ea404c97e900a48e26883de2ec489b5b2d2027aba2967e030db4e7a7e5a8a314d940d25e9390d427983f42a165b7108ed3ac6c8bd5132f8d8bd615b4e8e658edeeaf27ba8ae51d`
-  //   }
-  // }
-  // const t = await (
-  //   await fetch('http://localhost:1337/api/posts/1', requestOptions)
-  // ).text()
-  // const test = JSON.parse(t).data.attributes.content
-
   const fileName = fs.readFileSync(`posts/${slug}.md`, 'utf-8')
   const { data: frontmatter, content } = matter(fileName)
   return {
