@@ -93,13 +93,16 @@ const Post = ({ slug, frontmatter, content }) => {
         />
       </div>
       <style jsx>{`
+        .content {
+          background-color: #ebecf0;
+        }
         .content-post {
           padding: 1rem 10rem;
         }
         .header-post-image {
           width: 100%;
           position: relative;
-          padding-top: 42%;
+          padding-top: 90%;
         }
 
         .header-post-image img {
@@ -118,6 +121,16 @@ const Post = ({ slug, frontmatter, content }) => {
           width: 100%;
           align-items: center;
           margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+          .content-post {
+          padding: 1rem 1rem;
+        }
+
+        .header-post-description h1{
+          font-size: 1.8rem;
+          text-align: center;
+          padding: 1rem;
         }
       `}</style>
     </>

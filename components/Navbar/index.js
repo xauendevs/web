@@ -186,9 +186,7 @@ export default function Navbar() {
           bottom:0;
           right:0;  
           transform:translateX(-100%);
-
           height: calc(100vh);
-
           flex-direction: column;
           justify-content: center;
           align-items: center;
@@ -198,6 +196,13 @@ export default function Navbar() {
           width: 100vw;
           color: white;
           transition: all 0.3s ease-in-out;
+        }
+
+        .navbar__menu_mobile li{
+          margin-bottom: 1rem;
+          list-style-type:none;
+          font-size: 2rem;
+
         }
 
         .navbar__menu_mobile.is-active {
