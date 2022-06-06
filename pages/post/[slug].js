@@ -5,7 +5,7 @@ import BlogLayout from 'layouts/blog_layout'
 import md from 'markdown-it'
 import Head from 'next/head'
 
-const Post = ({ frontmatter, content }) => {
+const Post = ({ slug, frontmatter, content }) => {
   return (
     <>
       <Head>
@@ -17,6 +17,50 @@ const Post = ({ frontmatter, content }) => {
         <meta
           property="og:description"
           content={`${frontmatter.description}`}
+        />
+
+        <title>XauenDevs 🫒 {frontmatter.title}</title>
+        <meta name="description" content={`${frontmatter.description}`} />
+
+        <meta
+          property="og:url"
+          content={`https://xauendevs.vercel.app/post/${slug}`}
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content={`XauenDevs 🫒 ${frontmatter.title}`}
+        />
+        <meta
+          property="og:description"
+          content={`${frontmatter.description}`}
+        />
+        <meta
+          property="og:image"
+          content={`https://xauendevs.vercel.app${frontmatter.image}`}
+        />
+
+        <meta
+          name="twitter:card"
+          content="summary_large_image"
+          key={'twitter:card'}
+        />
+        <meta property="twitter:domain" content="xauendevs.vercel.app" />
+        <meta
+          property="twitter:url"
+          content={`https://xauendevs.vercel.app/post/${slug}`}
+        />
+        <meta
+          name="twitter:title"
+          content={`XauenDevs 🫒 ${frontmatter.title}`}
+        />
+        <meta
+          name="twitter:description"
+          content={`${frontmatter.description}`}
+        />
+        <meta
+          name="twitter:image"
+          content={`https://xauendevs.vercel.app${frontmatter.image}`}
         />
       </Head>
       <div className="content">
@@ -35,6 +79,7 @@ const Post = ({ frontmatter, content }) => {
             <h1>{frontmatter.title}</h1>
           </div>
         </div>
+
         <div
           className="content-post"
           dangerouslySetInnerHTML={{
@@ -96,6 +141,7 @@ export async function getStaticProps({ params: { slug } }) {
   const { data: frontmatter, content } = matter(fileName)
   return {
     props: {
+      slug,
       frontmatter,
       content
     }
