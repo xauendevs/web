@@ -10,72 +10,22 @@ tags:
   - general
 ---
 
-## Probando pintar codigo en los posts
+## Hola de nuevo! 👋🏻
 
-### Javascript
+Pues después de taaaaanto tiempo... nos encanta escribir estas lineas y es que...
 
-```javascript
-import marked from 'marked'
+#### **¡¡JaénDevelopers vuelve!!**
 
-marked.setOptions({
-  langPrefix: 'hljs language-',
-  highlight: function (code) {
-    return require('highlight.js').highlightAuto(code, ['html', 'javascript'])
-      .value
-  }
-})
-```
+Vuelve con un cambio de imagen, nuevo nombre y nueva web pero con las mismas ganas o más que antes después de este periodo de inactividad.
 
-### Kotlin
+A partir de ahora esta comunidad se denominará **XauenDevs**, haciendo una referencia al nombre de la ciudad en la época musulmana.
 
-```kotlin
-import kotlinx.serialization.Serializable
-import kotlin.random.Random
+En esta nueva etapa queremos aplicar una serie de cambios, que creemos, nos ayudarán a crecer como comunidad en toda la **provincia de Jaén**.
 
-interface Building
+### ¿Qué necesitamos?
 
-@Serializable
-class House(
-    private val rooms: Int? = 3,
-    val name: String = "Palace"
-) : Building {
-    var residents: Int = 4
-        get() {
-            println("Current residents: $field")
-            return field
-        }
+Es simple, necesitamos TÚ ayuda, asistiendo a las charlas, que retomaremos en septiembre, participando en nuestro servidor de discord, cualquier cosa que se te ocurra... ¡para nosotros es de gran ayuda!
 
-    fun burn(evacuation: (people: Int) -> Boolean) {
-        rooms ?: return
-        if (evacuation((0..residents).random()))
-            residents = 0
-    }
-}
+También podrás participar agregando secciones/funcionalidades a esta web, ya que tenemos el repositorio público y cualquiera puede crear una Pull Request añadiendo contenido a la web.
 
-fun main() {
-    val house = House(name = "Skyscraper 1")
-    house.burn {
-        Random.nextBoolean()
-    }
-}
-```
-
-### Swift
-
-```swift
-import Foundation
-
-@objc class Person: Entity {
-  var name: String!
-  var age:  Int!
-
-  init(name: String, age: Int) {
-    /* /* ... */ */
-  }
-
-  // Return a descriptive string for this person
-  func description(offset: Int = 0) -> String {
-    return "\(name) is \(age + offset) years old"
-  }
-}
-```
+Nuestro blog será también abierto para cualquier persona/empresa que quiera publicar algún post, sea del tema que sea, siempre y cuando esté relacionado con la tecnología y la provincia de Jaén.
