@@ -3,7 +3,7 @@ title: 'Nueva imagen y nueva temporada'
 metaTitle: 'Nueva imagen y nueva temporada'
 author: 'Alberto Tejero'
 metaDesc: 'Después de tanto tiempo de inactividad por el COVID-19, queremos volver y lo queremos hacer renovando la imagen de JaénDevelopers que a partir de ahora se denominará XauenDevs.'
-image: /img/header.png
+image: header.png
 date: '2022-06-06'
 tags:
   - xauendevs

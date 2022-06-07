@@ -12,7 +12,7 @@ const Post = ({ slug, frontmatter, content }) => {
         <title>{frontmatter.title}</title>
         <meta
           property="og:image"
-          content={`https://xauendevs.vercel.app${frontmatter.image}`}
+          content={`https://xauendevs.vercel.app/img/posts/${frontmatter.image}`}
         />
         <meta property="og:description" content={`${frontmatter.metaDesc}`} />
 
@@ -31,7 +31,7 @@ const Post = ({ slug, frontmatter, content }) => {
         <meta property="og:description" content={`${frontmatter.metaDesc}`} />
         <meta
           property="og:image"
-          content={`https://xauendevs.vercel.app${frontmatter.image}`}
+          content={`https://xauendevs.vercel.app/img/posts/${frontmatter.image}`}
         />
 
         <meta
@@ -51,13 +51,16 @@ const Post = ({ slug, frontmatter, content }) => {
         <meta name="twitter:description" content={`${frontmatter.metaDesc}`} />
         <meta
           name="twitter:image"
-          content={`https://xauendevs.vercel.app${frontmatter.image}`}
+          content={`https://xauendevs.vercel.app/img/posts/${frontmatter.image}`}
         />
       </Head>
       <div className="content">
         <div className="header-post">
           <div className="header-post-image">
-            <img src={frontmatter.image} alt={frontmatter.title} />
+            <img
+              src={`/img/posts/${frontmatter.image}`}
+              alt={frontmatter.title}
+            />
           </div>
           <div className="header-post-description">
             <small> {frontmatter.author}</small>
@@ -102,7 +105,7 @@ const Post = ({ slug, frontmatter, content }) => {
         .header-post-image {
           width: 100%;
           position: relative;
-          padding-top: 90%;
+          padding-top: 42%;
         }
 
         .header-post-image img {
@@ -124,13 +127,18 @@ const Post = ({ slug, frontmatter, content }) => {
         }
         @media (max-width: 768px) {
           .content-post {
-          padding: 1rem 1rem;
-        }
+            padding: 1rem 1rem;
+          }
 
-        .header-post-description h1{
-          font-size: 1.8rem;
-          text-align: center;
-          padding: 1rem;
+          .header-post-description h1 {
+            font-size: 1.8rem;
+            text-align: center;
+            padding: 1rem 0.2rem;
+          }
+
+          .header-post-image {
+            padding-top: 90%;
+          }
         }
       `}</style>
     </>

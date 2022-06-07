@@ -3,7 +3,7 @@ title: 'Configurando VS Code para C++'
 metaTitle: 'Configurando VS Code para C++'
 author: 'Alejandro Charte Luque'
 metaDesc: 'Configurando VS Code para C++'
-image: /img/header_configurando_vscode_para_cpp.png
+image: header_configurando_vscode_para_cpp.png
 date: '2022-06-06'
 tags:
   - vscode
@@ -12,8 +12,7 @@ tags:
 
 # Configurando el entorno
 
-Para estos tutoriales usaré [Visual Studio Code](https://code.visualstudio.com/) junto con las extensiones  [C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools) y [Easy C++ Projects](https://marketplace.visualstudio.com/items?itemName=ACharLuk.easy-cpp-projects).
-
+Para estos tutoriales usaré [Visual Studio Code](https://code.visualstudio.com/) junto con las extensiones [C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools) y [Easy C++ Projects](https://marketplace.visualstudio.com/items?itemName=ACharLuk.easy-cpp-projects).
 
 ## Descargando Visual Studio Code
 
@@ -49,7 +48,6 @@ Buen trabajo! Ahora tenemos un entorno para desarrollar nuestro primer proyecto 
 # Comenzando nuestro primer proyecto
 
 Después de haber configurado VSC para desarrollar C++, solo necesitamos crear un nuevo proyecto! Esto se hace en unos pocos pasos:
-
 
 ## Creando una carpeta para el proyecto
 

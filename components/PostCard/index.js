@@ -17,7 +17,7 @@ export default function PostCard({
           <a href={`/post/${slug}`} className="card-link">
             <div
               className="card-img-hovered"
-              style={{ backgroundImage: 'url(' + image + ')' }}
+              style={{ backgroundImage: 'url(/img/posts/' + image + ')' }}
             ></div>
           </a>
           <div className="card-info">

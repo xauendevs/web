@@ -1,34 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ¿Quieres colaborar en la web?
 
-## Getting Started
+Si quieres puedes colaborar en nuestra web, bien creando una sección, subiendo un post o algo que veas que se puede mejorar.
 
-First, run the development server:
+Nuestra web está con [Next.js](https://nextjs.org), framework de **React**. Para agregar algo a nuestra web deberás clonarte el repositorio, **CREAR UNA RAMA** y trabajar en ella para luego hacer una PR. Esta rama deberá tener un nombre como este **\*newpost**\_mi_nuevo_post\*
+
+Todo lo que suba será revisado por nuestros organizadores y serán los que aprueben o no tus cambios.
+
+Si necesitas una integración con terceros mediante algún token, apikey o similar... **¡¡no lo subas y háznoslo saber por privado!!**
+
+## Si lo que quieres es publicar un post...
+
+Los post que hay publicados en nuestra web son en formato markdown y tienes que seguir ciertas normas a la hora de subir tu código, por lo que, a continuación te las indicamos:
+
+### Nombre del fichero
+
+El nombre del fichero será lo que usaremos como slug de tu post, así que aqui tienes el **formato que debes utilizar** para post
 
 ```bash
-npm run dev
-# or
-yarn dev
+mi-nuevo-post.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Metadatos
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+La cabecera del post debe de llevar cierta información que se utilizará para pintarlos en nuestra web. Te ponemos un ejemplo de la cabecera.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```bash
+---
+title: 'Titulo'
+metaTitle: 'Titulo'
+author: 'Tu nombre o el que quieras q aparezca'
+metaDesc: 'Descripción corta de tu post'
+image: nombre_de_la_imagen.png
+date: 'fecha con formato yyyy-mm-dd'
+tags:
+  - etiqueta 1
+  - etiqueta 2
+  - etiqueta n
+---
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+A continuación ya podrás agregar tu contenido en formato Markdown, teniendo en cuenta que, por ejemplo, las imagenes deberán de ser una url externa o bien meter las imágenes dentro del directorio _public/img/posts_.
 
-## Learn More
+Una vez tengas todo, súbelo a tu nueva rama y alguno de los organizadores lo revisaremos, si fuese necesario se harán comentarios en la propia pullrequest con cambios sugeridos o el motivo del rechazo.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Antes de todo esto... ¡GRACIAS POR LLEGAR AQUÍ Y SI HAS COLABORADO MIL GRACIAS MÁS!
