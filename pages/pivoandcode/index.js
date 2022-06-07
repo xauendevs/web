@@ -69,6 +69,7 @@ export default function PivoAndCodePage({ pivos }) {
 
         @media (max-width: 576px) {
           section {
+            padding: 6rem 1rem;
             grid-template-columns: repeat(1, 1fr);
           }
         }
