@@ -51,7 +51,7 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
-              <Link href="/about">
+              <Link href="/pivoandcode">
                 <a>pivoandcode</a>
               </Link>
             </li>
@@ -83,7 +83,7 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
-              <Link href="/about">
+              <Link href="/pivoandcode">
                 <a onClick={() => setIsOpen(false)}>pivoandcode</a>
               </Link>
             </li>

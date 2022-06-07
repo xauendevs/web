@@ -8,6 +8,9 @@ date: '2022-06-06'
 tags:
   - xauendevs
   - general
+  - nextjs
+  - javascript
+  - probando
 ---
 
 ## Hola de nuevo! 👋🏻

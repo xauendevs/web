@@ -24,7 +24,7 @@ export default function Charlantes({ charlantes, isHome }) {
       <style jsx>{`
         .list-charlantes {
           display: flex;
-          justify-content: flex-start;
+          justify-content: center;
           gap: 40px;
           flex-wrap: wrap;
         }
