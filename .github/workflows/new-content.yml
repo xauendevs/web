@@ -1,7 +1,6 @@
 name: Publis new content
 
 on:
-  workflow_dispatch:
   pull_request:
     types:
       - closed
@@ -15,7 +14,9 @@ jobs:
       - name: Send new post to discord
         if: github.event.pull_request.merged == true
         env:
+          URL_BOT: ${{ secrets.URL_BOT }}
           DISCORD_T: ${{ secrets.DISCORD_TOKEN }}
+          BRANCH_NAME: ${{ github.head_ref }}
         run: |
-          echo The PR was merged - ${{ github.event.head_commit.message }}
-          curl -H "Content-Type: application/json" -d '{"username": "Un lagarto picacódigo", "content": "**[NUEVO POST]**\n${{ github.event.head_commit.message }}"}' $DISCORD_T
+          echo The PR was merged - $BRANCH_NAME
+          curl -H "Content-Type: application/json" -H "authorization: 'Bearer $DISCORD_T'" -d '{"content": "Un lagarto picacódigo", "content": "$BRANCH_NAME"}' $URL_BOT
