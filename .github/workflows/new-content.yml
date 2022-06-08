@@ -16,7 +16,7 @@ jobs:
         env:
           URL_BOT: ${{ secrets.URL_BOT }}
           DISCORD_T: ${{ secrets.DISCORD_TOKEN }}
-          BRANCH_NAME: ${{ github.ref_name }}
+          BRANCH_NAME: ${{ github.head_ref }}
         run: |
           echo The PR was merged - $BRANCH_NAME
-          curl -X POST -H "Content-Type: application/json" -H "authorization: 'Bearer $DISCORD_T'" -d '{"content": "Un lagarto picacódigo", "content": $BRANCH_NAME}' $URL_BOT
+          curl -X POST -H "Content-Type: application/json" -H "authorization: 'Bearer $DISCORD_T'" -d '{"content": "Un lagarto picacódigo", "content": "$BRANCH_NAME"}' $URL_BOT
