@@ -2,7 +2,7 @@
 
 Si quieres puedes colaborar en nuestra web, bien creando una sección, subiendo un post o algo que veas que se puede mejorar.
 
-Nuestra web está con [Next.js](https://nextjs.org), framework de **React**. Para agregar algo a nuestra web deberás clonarte el repositorio, **CREAR UNA RAMA** y trabajar en ella para luego hacer una PR. Esta rama deberá tener un nombre como este **\*newpost**\_mi_nuevo_post\*
+Nuestra web está con [Next.js](https://nextjs.org), framework de **React**. Para agregar algo a nuestra web deberás clonarte el repositorio, **CREAR UNA RAMA** y trabajar en ella para luego hacer una PR.
 
 Todo lo que suba será revisado por nuestros organizadores y serán los que aprueben o no tus cambios.
 
@@ -11,6 +11,9 @@ Si necesitas una integración con terceros mediante algún token, apikey o simil
 ## Si lo que quieres es publicar un post...
 
 Los post que hay publicados en nuestra web son en formato markdown y tienes que seguir ciertas normas a la hora de subir tu código, por lo que, a continuación te las indicamos:
+
+### Crear rama
+Esta rama deberá tener el prefijo **newpost_** y agregar el nombre de tu post, coincidiendo con el nombre del fichero. ej: *newpost_mi_nuevo_post*
 
 ### Nombre del fichero
 
