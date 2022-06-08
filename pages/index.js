@@ -2,6 +2,7 @@ import Charlantes from 'components/Charlantes'
 import Header from 'components/Header'
 import PostsListHome from 'components/PostsListHome'
 import SectionHome from 'components/SectionHome'
+import Sponsors from 'components/Sponsors'
 import WhoWeAre from 'components/Whoweare'
 import fs from 'fs'
 import matter from 'gray-matter'
@@ -57,6 +58,9 @@ export default function Home({ posts, charlantes }) {
       <SectionHome className={'blog'} title={'Últimos Posts'}>
         <PostsListHome isHome={'true'} posts={posts} />
       </SectionHome>
+      <SectionHome className={'sponsors'} title={'Sponsors'}>
+        <Sponsors sponsors={sponsors}></Sponsors>
+      </SectionHome>
     </>
   )
 }
@@ -67,6 +71,8 @@ export async function getStaticProps() {
       return 0.234 - Math.random()
     })
     .slice(0, 5)
+
+  const sponsors = getData('sponsors')
 
   let posts = getData('posts')
 
@@ -79,7 +85,8 @@ export async function getStaticProps() {
   return {
     props: {
       posts,
-      charlantes
+      charlantes,
+      sponsors
     }
   }
 }
