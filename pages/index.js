@@ -8,7 +8,7 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import Head from 'next/head'
 
-export default function Home({ posts, charlantes }) {
+export default function Home({ posts, charlantes, sponsors }) {
   return (
     <>
       <Head>
@@ -74,9 +74,7 @@ export async function getStaticProps() {
 
   const sponsors = getData('sponsors')
 
-  let posts = getData('posts')
-
-  posts = posts
+  const posts = getData('posts')
     .sort((a, b) => {
       return new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
     })

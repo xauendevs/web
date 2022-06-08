@@ -1,5 +1,5 @@
 ---
 name: 'deditec'
-photo: img/soponsors/deditec.jpeg
+logo: /img/sponsors/logo_deditec_negro.png
 url: https://deditec.es/
 ---
