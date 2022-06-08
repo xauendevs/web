@@ -5,7 +5,6 @@ on:
     types:
       - closed
 
-
 jobs:
   send_message:
     name: Send Message to Discord
@@ -20,5 +19,5 @@ jobs:
           BRANCH_NAME: ${{ github.head_ref }}
         run: |
           echo The PR was merged - $BRANCH_NAME
-          export BRANCH_NAME=$BRANCH_NAME
-          curl -X POST -H "Content-Type: application/json" -H "authorization: 'Bearer $DISCORD_T'" -d '{"content": "Un lagarto picacódigo", "content": "$$BRANCH_NAME"}' $URL_BOT
+          curl -X POST -H "Content-Type: application/json" -H "authorization: 'Bearer $DISCORD_T'" \
+          -d '{"content": "Un lagarto picacódigo", "content": "'"$BRANCH_NAME"'"}' $URL_BOT
