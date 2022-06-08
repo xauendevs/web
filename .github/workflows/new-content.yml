@@ -1,7 +1,7 @@
 name: Publis new content
 
 on:
-  workflow-dispatch
+  workflow-dispatch:
   pull_request:
     types:
       - closed
