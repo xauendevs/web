@@ -10,9 +10,10 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-      - name: Send new post to discord
-        env:
-          DISCORD_T: ${{ secrets.DISCORD_TOKEN }}
-        run: |
+    - uses: actions/checkout@v1
+    - name: Send new post to discord
+      env:
+        DISCORD_T: ${{ secrets.DISCORD_TOKEN }}
+      run: |
           echo The PR was merged - ${{ github.event.head_commit.message }}
           curl -H "Content-Type: application/json" -d '{"username": "Un lagarto picacódigo", "content": "**[NUEVO POST]**\n${{ github.event.head_commit.message }}"}' $DISCORD_T
