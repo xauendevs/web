@@ -96,6 +96,5 @@ function getData(type) {
       frontmatter
     }
   })
-
   return items
 }
