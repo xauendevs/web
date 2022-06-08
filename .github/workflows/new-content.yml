@@ -1,6 +1,7 @@
 name: Publis new content
 
 on:
+  workflow-dispatch
   pull_request:
     types:
       - closed
@@ -10,6 +11,7 @@ jobs:
     name: Send Message to Discord
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Send new post to discord
         if: github.event.pull_request.merged == true
         env:
