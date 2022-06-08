@@ -19,4 +19,4 @@ jobs:
           BRANCH_NAME: ${{ github.head_ref }}
         run: |
           echo The PR was merged - $BRANCH_NAME
-          curl -H "Content-Type: application/json" -H "authorization: 'Bearer $DISCORD_T'" -d '{"content": "Un lagarto picacódigo", "content": "$BRANCH_NAME"}' $URL_BOT
+          curl -X POST -H "Content-Type: application/json" -H "authorization: 'Bearer $DISCORD_T'" -d '{"content": "Un lagarto picacódigo", "content": "$BRANCH_NAME"}' $URL_BOT
