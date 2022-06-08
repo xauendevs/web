@@ -12,6 +12,7 @@ function MyApp({ Component, pageProps }) {
       </MainLayout>
     )
   }
+
   return (
     <MainLayout>
       <Component {...pageProps} />
