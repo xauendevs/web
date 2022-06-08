@@ -6,11 +6,12 @@ on:
       - closed
 
 jobs:
-  if_merged:
-    if: github.event.pull_request.merged == true
+  send_message:
+    name: Send Message to Discord
     runs-on: ubuntu-latest
     steps:
       - name: Send new post to discord
+        if: github.event.pull_request.merged == true
         env:
           DISCORD_T: ${{ secrets.DISCORD_TOKEN }}
         run: |
