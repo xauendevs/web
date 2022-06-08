@@ -5,6 +5,7 @@ on:
     types:
       - closed
 
+
 jobs:
   send_message:
     name: Send Message to Discord
