@@ -2,12 +2,13 @@ import Charlantes from 'components/Charlantes'
 import Header from 'components/Header'
 import PostsListHome from 'components/PostsListHome'
 import SectionHome from 'components/SectionHome'
+import Sponsors from 'components/Sponsors'
 import WhoWeAre from 'components/Whoweare'
 import fs from 'fs'
 import matter from 'gray-matter'
 import Head from 'next/head'
 
-export default function Home({ posts, charlantes }) {
+export default function Home({ posts, charlantes, sponsors }) {
   return (
     <>
       <Head>
@@ -57,6 +58,9 @@ export default function Home({ posts, charlantes }) {
       <SectionHome className={'blog'} title={'Últimos Posts'}>
         <PostsListHome isHome={'true'} posts={posts} />
       </SectionHome>
+      <SectionHome className={'sponsors'} title={'Colaboradores'}>
+        <Sponsors sponsors={sponsors}></Sponsors>
+      </SectionHome>
     </>
   )
 }
@@ -68,9 +72,9 @@ export async function getStaticProps() {
     })
     .slice(0, 5)
 
-  let posts = getData('posts')
+  const sponsors = getData('sponsors')
 
-  posts = posts
+  const posts = getData('posts')
     .sort((a, b) => {
       return new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
     })
@@ -79,7 +83,8 @@ export async function getStaticProps() {
   return {
     props: {
       posts,
-      charlantes
+      charlantes,
+      sponsors
     }
   }
 }
