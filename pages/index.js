@@ -11,7 +11,6 @@ import Head from 'next/head'
 import getGitHubContributors from 'services/getContributorsGithub'
 
 export default function Home({ posts, charlantes, sponsors, contributors }) {
-  console.log(contributors)
   return (
     <>
       <Head>
@@ -88,7 +87,6 @@ export async function getStaticProps() {
     .slice(0, 3)
 
   const contributors = await getGitHubContributors()
-  console.log(contributors)
   return {
     props: {
       posts,
