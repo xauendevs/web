@@ -22,6 +22,7 @@ export default function CharlanteItem({
           transition: all 0.3s ease;
           cursor: pointer;
           filter: grayscale(0);
+          position: relative;
         }
         .charlante-item:hover {
           filter: grayscale(100%);
@@ -40,8 +41,10 @@ export default function CharlanteItem({
           backdrop-filter: blur(5px);
           padding: 0.2rem 1rem;
           border-radius: 50%;
-          width: 100%;
-          height: 100%;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
           font-weight: bold;
         }
         .charlante-item:hover span {

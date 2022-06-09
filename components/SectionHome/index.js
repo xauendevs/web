@@ -36,7 +36,7 @@ export default function SectionHome({ title, children, className, id }) {
         }
 
         section:last-of-type {
-          margin-bottom: 200px;
+          margin-bottom: 199px;
         }
         h1 {
           font-size: 2.5rem;
