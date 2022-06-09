@@ -26,6 +26,7 @@ export default function SectionHome({ title, children, className, id }) {
           background-attachment: fixed;
           background-size: cover;
         }
+
         section.contributors {
           color: #ebecf0;
           background-color: black;
@@ -34,6 +35,7 @@ export default function SectionHome({ title, children, className, id }) {
         section.contributors h1 {
           margin-bottom: 60px;
         }
+
 
         section:last-of-type {
           margin-bottom: 200px;
