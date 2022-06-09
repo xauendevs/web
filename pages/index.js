@@ -1,4 +1,5 @@
 import Charlantes from 'components/Charlantes'
+import Contributors from 'components/Contributors'
 import Header from 'components/Header'
 import PostsListHome from 'components/PostsListHome'
 import SectionHome from 'components/SectionHome'
@@ -7,8 +8,9 @@ import WhoWeAre from 'components/Whoweare'
 import fs from 'fs'
 import matter from 'gray-matter'
 import Head from 'next/head'
+import getGitHubContributors from 'services/getContributorsGithub'
 
-export default function Home({ posts, charlantes, sponsors }) {
+export default function Home({ posts, charlantes, sponsors, contributors }) {
   return (
     <>
       <Head>
@@ -55,11 +57,15 @@ export default function Home({ posts, charlantes, sponsors }) {
       <SectionHome className={'charlantes'} title={'Charlantes'}>
         <Charlantes charlantes={charlantes} isHome={'true'} />
       </SectionHome>
+      <SectionHome className={'sponsors'} title={'Colaboradores'}>
+        <Sponsors sponsors={sponsors}></Sponsors>
+      </SectionHome>
       <SectionHome className={'blog'} title={'Últimos Posts'}>
         <PostsListHome isHome={'true'} posts={posts} />
       </SectionHome>
-      <SectionHome className={'sponsors'} title={'Colaboradores'}>
-        <Sponsors sponsors={sponsors}></Sponsors>
+
+      <SectionHome className={'contributors'} title={'Contribuidores'}>
+        <Contributors contributors={contributors} />
       </SectionHome>
     </>
   )
@@ -80,11 +86,13 @@ export async function getStaticProps() {
     })
     .slice(0, 3)
 
+  const contributors = await getGitHubContributors()
   return {
     props: {
       posts,
       charlantes,
-      sponsors
+      sponsors,
+      contributors
     }
   }
 }
