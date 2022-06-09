@@ -65,6 +65,12 @@ export default function Header() {
           span {
           font-size: 3.5rem;
         }
+
+        @media (max-width: 500px) {
+          span {
+          font-size: 2.5rem;
+        }
+
       `}</style>
     </>
   )

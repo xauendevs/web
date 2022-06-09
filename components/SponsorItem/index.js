@@ -9,8 +9,9 @@ export default function SponsorItem({ name, url, logo }) {
             className="sponsor-item-logo"
             src={'/img/sponsors/' + logo}
             alt={name + ' logo'}
-            layout={'fill'}
-            objectFit={'contain'}
+            layout={'responsive'}
+            width={'100%'}
+            height={'100%'}
           />
         </a>
       </div>
@@ -18,16 +19,12 @@ export default function SponsorItem({ name, url, logo }) {
         .sponsor-item {
           width: 200px;
           height: 200px;
-          -webkit-filter: grayscale(1);
-          -moz-filter: grayscale(1);
           filter: grayscale(1);
           transition: all 0.5s ease;
         }
         .sponsor-item:hover {
           cursor: pointer;
           transform: scale(1.025);
-          -webkit-filter: grayscale(0);
-          -moz-filter: grayscale(0);
           filter: grayscale(0);
         }
       `}</style>

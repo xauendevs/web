@@ -13,7 +13,7 @@ export default function WhoWeAre() {
       <p>
         En estas charlas, denominadas <strong>Pivo&Code</strong>, uno de los
         puntos más atractivos son los <strong>networking</strong>, donde
-        estudiantes/docentes/profesionales del sector pueden compartir
+        estudiantes, docentes o profesionales del sector pueden compartir
         conocimientos y experiencias. Además de la sinergía que se crea entre
         los asistentes, surgen oportunidades laborales.
       </p>
