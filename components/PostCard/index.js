@@ -166,6 +166,17 @@ export default function PostCard({
         .card-4 .card-img-hovered {
           background-image: url(https://source.unsplash.com/zAi2Is48-MA);
         }
+
+        @media (max-width: 300px) {
+          .card {
+            width: 325px;
+            min-width: 200px;
+          }
+          .card .card-info .card-title {
+            font-size: 1.1rem;
+            margin-top: 0;
+          }
+        }
       `}</style>
     </>
   )

@@ -26,15 +26,14 @@ export default function SectionHome({ title, children, className, id }) {
           background-attachment: fixed;
           background-size: cover;
         }
-         section.contributors {
-           color:#EBECF0;
+        section.contributors {
+          color: #ebecf0;
           background-color: black;
-          
-         }
+        }
 
-         section.contributors h1 {
-           margin-bottom: 60px;
-         }
+        section.contributors h1 {
+          margin-bottom: 60px;
+        }
 
         section:last-of-type {
           margin-bottom: 200px;
@@ -58,6 +57,16 @@ export default function SectionHome({ title, children, className, id }) {
           section {
             padding: 1rem !important;
           }
+        }
+        @media (max-width: 500px) {
+          h1 {
+            font-size: 1.3rem;
+            position: relative;
+          }
+          h1::before {
+            height: 2px;
+          }
+        }
       `}</style>
     </>
   )
