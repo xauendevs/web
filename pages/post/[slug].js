@@ -91,7 +91,18 @@ const Post = ({ slug, frontmatter, content }) => {
                   return '' // use external default escaping
                 }
               }).render(content) +
-              '<style>.content-post img{max-width:100%;}</style>'
+              `<style>
+                .content-post img{
+                 max-width:100%;
+                 display: block;
+                 margin-left: auto;
+                  margin-right: auto;
+                }
+                a {
+                  font-weight: bold;
+                  color: #7db392;
+                }
+              </style>`
           }}
         />
       </div>
