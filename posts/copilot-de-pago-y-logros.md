@@ -11,7 +11,7 @@ tags:
 
 Pues si... Desde ayer **Github Copilot** deja de ser gratuito, aunque podrás obtener unos días gratuitos (60 días) hasta el 22 de agosto. Y ahora... ¿Tendré que volver a aprender a programar? ¿Merece la pena pagar? ¿Hay alternativas?
 
-Estas preguntas deberás valorarlas tu mismo, desde mi experiencia, es cierto que ayuda algo pero tampoco es un sustituto 100%, por lo que para mi, insisto, PARA MI, si que puedo prescindir de él y no creo que pague por tenerlo. Y no te voy a engañar, lo primero que hice al enterarme de esto, fué buscar en google _'tabine pricing'_ 🤣
+Estas preguntas deberás valorarlas tu mismo, desde mi experiencia, es cierto que ayuda algo pero tampoco es un sustituto 100%, por lo que para mi, insisto, PARA MI, si que puedo prescindir de él y no creo que pague por tenerlo. Y no te voy a engañar, lo primero que hice al enterarme de esto, fué buscar en google _'tabnine pricing'_ 🤣
 
 ## ¿Cual es mi opinón sobre estas IA?
 
@@ -21,7 +21,7 @@ Llamame conspiranoico... pero que todo el código que hacemos, que si, que antes
 
 ![meme de conspiración](/img/posts/itsconspiracy.jpeg)
 
-Pero bueno por si os interesa, aquí están los precios de copilot, aunque existe otra alternativa que es [Tabine](https://www.tabnine.com/pricing) y cuenta con un plan gratuito, yo no lo he probado pero he oido muy buenas cosas sobre él y es un claro candidato a sustituir Copilot en mi día a día...
+Pero bueno por si os interesa, aquí están los precios de copilot, aunque existe otra alternativa que es [Tabnine](https://www.tabnine.com/pricing) y cuenta con un plan gratuito, yo no lo he probado pero he oido muy buenas cosas sobre él y es un claro candidato a sustituir Copilot en mi día a día...
 
 ![precios de copilot](/img/posts/copilot-price.png)
 
