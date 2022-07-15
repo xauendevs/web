@@ -1,28 +1,24 @@
+import Discord from 'components/Icons/Discord'
 import Github from 'components/Icons/Github'
 import Instagram from 'components/Icons/Instagram'
 import Twitter from 'components/Icons/Twitter'
-import Discord from 'components/Icons/Discord'
-import Image from 'next/image'
-import logo from 'public/img/logo.webp'
-import { useState } from 'react'
 import Link from 'next/link'
 
 export default function Footer() {
-  const [ratio, setRatio] = useState(16 / 9)
   return (
     <>
       <section>
         <div className="rrss-container">
-          <a href="https://twitter.com/jaendevelopers" target={'_blank'}>
+          <a href="https://twitter.com/xauendevs" target={'_blank'}>
             <Twitter width={'25'} fill={'#dcdcdc'} height={'25'}></Twitter>
           </a>
           <a href="https://github.com/xauendevs" target={'_blank'}>
             <Github width={'25'} fill={'#dcdcdc'} height={'25'}></Github>
           </a>
-          <a href="https://instagram.com/jaendevelopers" target={'_blank'}>
+          <a href="https://instagram.com/xauendevs" target={'_blank'}>
             <Instagram width={'25'} fill={'#dcdcdc'} height={'25'}></Instagram>
           </a>
-          <a href="https://discord.gg/69cNGbQa" target={'_blank'}>
+          <a href="https://discord.gg/CC9e6dtqxQ" target={'_blank'}>
             <Discord width={'25'} fill={'#dcdcdc'} height={'25'} />
           </a>
         </div>
