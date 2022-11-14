@@ -150,6 +150,9 @@ const Post = ({ slug, frontmatter, content }) => {
           .header-post-image {
             padding-top: 90%;
           }
+          .header-post-image img {
+            height: 80%;
+          }
         }
       `}</style>
     </>
