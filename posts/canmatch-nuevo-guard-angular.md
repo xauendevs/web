@@ -2,7 +2,7 @@
 title: 'CanMatch, el nuevo guard de Angular'
 metaTitle: 'CanMatch, el nuevo guard de Angular'
 author: 'Alberto Tejero'
-metaDesc: 'En este pequeño post podemos ver una implementación sencilla del guard 🛡️ que tenemos disponible en Angular 14. Hacemos un acceso a un perfil de usuario según el rol que tiene el usuario logado.'
+metaDesc: 'En este pequeño post podemos ver una implementación sencilla del nuevo guard 🛡️ que tenemos disponible en Angular 14. Hacemos un acceso a un perfil de usuario según el rol que tiene el usuario autenticado.'
 image: tinywow_canmatch-nuevo-guard.webp
 date: '2022-11-14'
 tags:
@@ -14,7 +14,7 @@ tags:
 
 ## Angular 14 + CanMatch
 
-En la última versión de Angular disponemos de este nuevo guard con el que podremos decidir que ruta y que componente renderizamos. Si la implementación de CanMatch devuelve true continua con la navegación y el enrutador utilizará el primer componente que haga "match".
+En la última versión de **Angular** disponemos de este nuevo guard con el que podremos decidir que ruta y que componente renderizamos. Si la implementación de **CanMatch** devuelve true continua con la navegación y el enrutador utilizará el primer componente que haga "match".
 
 ## Podemos hacer ruta según rol de manera sencilla
 
@@ -104,8 +104,19 @@ const routes: Routes = [
 
 ### ¿Que hará esto?
 
-Pues cuando entremos en nuestra pantalla _/profile_ comprobará el rol guardado en el localStorage y lo comparará contra el rol que pasamos por parámetro. Irá pasando por todos las "rutas" hijas y la que primero devuelva true será a la que el enrutador entrará y renderizará ese componente. Si el rol no es encontrado irá al _NotFoundComponent_.
+Cuando accedemos a la pantalla de _/profile_ comprobará el rol guardado en el localStorage y lo comparará contra el rol que pasamos por parámetro. Irá pasando por todas las "rutas" hijas y la que primero devuelva true será a la que el enrutador entrará y renderizará ese componente. Si el rol no es encontrado irá al _NotFoundComponent_.
+
+Es un ejemplo bastante sencillo pero conciso de como puedo usar este **CanMatch**.
+
+Enlace documentación:
+[Angular - CanMatch](https://angular.io/api/router/CanMatch)
 
 ## Demo
 
 ![Video de como funciona la implementación de CanMatch](/img/posts/demo-canmatch-angular.gif)
+
+Alberto Tejero - Senior frontend - Bravent
+
+[Github](https://github.com/albertot-dev) -
+[Instagram](https://www.instagram.com/albertot_dev/) -
+[Twitter](https://twitter.com/albertot_dev)
