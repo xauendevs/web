@@ -3,13 +3,12 @@ import '../styles/globals.css'
 import '../node_modules/highlight.js/styles/atom-one-dark.css'
 import Head from 'next/head'
 import splitbee from '@splitbee/web'
+import { useEffect, useState } from 'react'
 
 function MyApp({ Component, pageProps }) {
-  if (process.env.SPLITBEE) {
-    splitbee.init({
-      token: `${process.env.SPLITBEE}`
-    })
-  }
+  splitbee.init({
+    token: `86ZTHZVT02N9`
+  })
 
   if (Component.Layout) {
     const { Layout } = Component
