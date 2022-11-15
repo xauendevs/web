@@ -2,8 +2,15 @@ import MainLayout from 'layouts/main_layout'
 import '../styles/globals.css'
 import '../node_modules/highlight.js/styles/atom-one-dark.css'
 import Head from 'next/head'
+import splitbee from '@splitbee/web'
 
 function MyApp({ Component, pageProps }) {
+  if (process.env.SPLITBEE) {
+    splitbee.init({
+      token: `${process.env.SPLITBEE}`
+    })
+  }
+
   if (Component.Layout) {
     const { Layout } = Component
     return (
