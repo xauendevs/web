@@ -110,6 +110,12 @@ const Post = ({ slug, frontmatter, content }) => {
         .content {
           background-color: #ebecf0;
         }
+        @media (prefers-color-scheme: dark) {
+          .content {
+            background-color: #222;
+            color: #eee;
+          }
+        }
         .content-post {
           padding: 1rem 10rem;
         }
