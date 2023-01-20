@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@splitbee/web": "^0.3.0",
+    "@vercel/analytics": "^0.1.8",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.5.1",
     "markdown-it": "^13.0.1",
