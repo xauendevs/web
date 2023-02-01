@@ -7,9 +7,9 @@ assignees: ''
 
 ---
 
----
+\---
 description: 'Descripción para las etiquetas meta'
 image: arrastra aqui la imagen principal
----
+\---
 
 #Tu contenido
