@@ -19,19 +19,19 @@ export default function PivoListItem({ pivo, slug }) {
             <div className="card-time">{pivo.date}</div>
           </div>
           <Link href={`/pivoandcode/${slug}`}>
-            <a>
-              <h1 className="card-title">{pivo.title}</h1>
-            </a>
+            <h1 className="card-title">{pivo.title}</h1>
           </Link>
           <div className="card-tags avatars">
             {pivo.charlantes.map((tag) => (
-              <Link key={tag.slug} href={`/charlante/${tag.slug}`}>
-                <a className="card-tag avatar tag-news">
-                  <div>
-                    {tag.photo}
-                    <img src={tag.data.photo} alt={tag.title} />
-                  </div>
-                </a>
+              <Link
+                key={tag.slug}
+                className="card-tag avatar tag-news"
+                href={`/charlante/${tag.slug}`}
+              >
+                <div>
+                  {tag.photo}
+                  <img src={tag.data.photo} alt={tag.title} />
+                </div>
               </Link>
             ))}
           </div>

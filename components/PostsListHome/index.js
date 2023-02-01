@@ -1,27 +1,32 @@
 import LinkSection from 'components/LinkSection'
 import PostCard from 'components/PostCard'
+import { useState, useEffect } from 'react'
 
 export default function PostsListHome({ posts, isHome }) {
-  let linkToBlog = <></>
-  if (isHome) {
-    linkToBlog = <LinkSection link={'/blog'} text={'Ver todos los posts'} />
-  }
+  const [showLinkToBlog, setShowLinkToBlog] = useState(false)
+
+  useEffect(() => {
+    setShowLinkToBlog(isHome)
+  }, [isHome])
+
   return (
     <>
       <div className="card-container">
-        {posts.map(({ slug, frontmatter }) => (
+        {posts.map(({ slug, ...post }) => (
           <PostCard
             key={slug}
-            title={frontmatter.title}
+            title={post.title}
             slug={slug}
-            date={frontmatter.date}
-            author={frontmatter.author}
-            tags={frontmatter.tags}
-            image={frontmatter.image}
+            date={post.date}
+            author={post.author}
+            tags={post.tags}
+            image={post.image}
           />
         ))}
       </div>
-      {linkToBlog}
+      {showLinkToBlog && (
+        <LinkSection link={'/blog'} text={'Ver todos los posts'} />
+      )}
       <style jsx>{`
         .card-container {
           width: 100%;

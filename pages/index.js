@@ -6,6 +6,7 @@ import SectionHome from 'components/SectionHome'
 import Sponsors from 'components/Sponsors'
 import WhoWeAre from 'components/Whoweare'
 import fs from 'fs'
+import glcms from 'github-like-cms'
 import matter from 'gray-matter'
 import Head from 'next/head'
 import getGitHubContributors from 'services/getContributorsGithub'
@@ -60,13 +61,14 @@ export default function Home({ posts, charlantes, sponsors, contributors }) {
       <SectionHome className={'sponsors'} title={'Colaboradores'}>
         <Sponsors sponsors={sponsors}></Sponsors>
       </SectionHome>
+
       <SectionHome className={'blog'} title={'Últimos Posts'}>
         <PostsListHome isHome={'true'} posts={posts} />
       </SectionHome>
-
+      {/*
       <SectionHome className={'contributors'} title={'Contribuidores'}>
         <Contributors contributors={contributors} />
-      </SectionHome>
+      </SectionHome> */}
     </>
   )
 }
@@ -80,11 +82,13 @@ export async function getStaticProps() {
 
   const sponsors = getData('sponsors')
 
-  const posts = getData('posts')
-    .sort((a, b) => {
-      return new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
-    })
-    .slice(0, 3)
+  // const posts = getData('posts')
+  //   .sort((a, b) => {
+  //     return new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
+  //   })
+  //   .slice(0, 3)
+
+  const posts = await glcms.getLastPosts('xauendevs', 'web', 3)
 
   const contributors = await getGitHubContributors()
   return {

@@ -1,3 +1,14 @@
+:root {
+  --primary: #7db392;
+  --primary-80: rgba(125, 179, 146, 0.8);
+  --primary-70: rgba(125, 179, 146, 0.8);
+  --primary-60: rgba(125, 179, 146, 0.8);
+  --primary-10: rgba(125, 179, 146, 0.1);
+  --bg-primary: #10101a;
+  --bg-primary-opacity-80: rgba(16, 16, 26, 0.8);
+  --white: #fff;
+}
+
 html,
 body {
   padding: 0;

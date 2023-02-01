@@ -1,13 +1,19 @@
-import fs from 'fs'
-import matter from 'gray-matter'
+import Pagination from 'components/Pagination'
 import PostsListHome from 'components/PostsListHome'
+import glcms from 'github-like-cms'
+import { useState, useEffect } from 'react'
+export default function Blog({ posts, totalPosts, actualPage }) {
+  const [totalPages, setTotalPages] = useState(0)
+  useEffect(() => {
+    setTotalPages(Math.ceil(totalPosts / 10))
+  }, [totalPosts])
 
-export default function Blog({ posts }) {
   return (
     <>
       <section>
         <h1>Blog</h1>
         <PostsListHome posts={posts} />
+        <Pagination actualPage={actualPage} totalPages={totalPages} />
       </section>
       <style jsx>{`
         section {
@@ -16,7 +22,7 @@ export default function Blog({ posts }) {
           padding: 0 2rem;
           min-height: 100vh;
           display: flex;
-          justify-content: center;
+
           flex-direction: column;
           margin-bottom: 200px;
         }
@@ -28,32 +34,19 @@ export default function Blog({ posts }) {
   )
 }
 
-export async function getStaticProps() {
-  let posts = getData('posts')
-
-  posts = posts.sort((a, b) => {
-    return new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
-  })
-
+export async function getServerSideProps({ query: { page } }) {
+  const pageQuery = page ?? 1
+  const { actualPage, posts, totalPosts } = await glcms.getPostsPagination(
+    'xauendevs',
+    'web',
+    pageQuery,
+    10
+  )
   return {
     props: {
-      posts
-    }
+      posts,
+      actualPage: parseInt(actualPage),
+      totalPosts
+    } // will be passed to the page component as props
   }
-}
-
-function getData(type) {
-  const files = fs.readdirSync(type)
-  let items = files.map((fileName) => {
-    const slug = fileName.replace('.md', '')
-    const readFile = fs.readFileSync(`${type}/${fileName}`, 'utf-8')
-    const { data: frontmatter } = matter(readFile)
-
-    return {
-      slug,
-      frontmatter
-    }
-  })
-
-  return items
 }

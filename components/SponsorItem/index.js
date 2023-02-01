@@ -9,9 +9,7 @@ export default function SponsorItem({ name, url, logo }) {
             className="sponsor-item-logo"
             src={'/img/sponsors/' + logo}
             alt={name + ' logo'}
-            layout={'responsive'}
-            width={'100%'}
-            height={'100%'}
+            fill
           />
         </a>
       </div>

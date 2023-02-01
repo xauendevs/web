@@ -24,10 +24,8 @@ export default function Footer() {
         </div>
         <div className="logo">
           <Link href="/">
-            <a>
-              <span>xauen</span>
-              <span>devs</span>
-            </a>
+            <span>xauen</span>
+            <span>devs</span>
           </Link>
         </div>
         <small>

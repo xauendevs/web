@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-
+import styles from './Navbar.module.css'
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [show, setShow] = useState(true)
@@ -35,35 +35,25 @@ export default function Navbar() {
   return (
     <>
       <nav className={`navbar ${show ? 'show' : 'hidden'}`}>
-        <div className="navbar__logo">
+        <div className={styles.navbar__logo}>
           <Link href="/">
-            <a>
-              <span>xauen</span>
-              <span>devs</span>
-            </a>
+            <span>xauen</span>
+            <span>devs</span>
           </Link>
         </div>
-        <div className="navbar__menu">
+        <div className={styles.navbar__menu}>
           <ul>
             <li>
-              <Link href="/">
-                <a>inicio</a>
-              </Link>
+              <Link href="/">inicio</Link>
             </li>
             <li>
-              <Link href="/pivoandcode">
-                <a>pivoandcode</a>
-              </Link>
+              <Link href="/pivoandcode">pivoandcode</Link>
             </li>
             <li>
-              <Link href="/#charlantes">
-                <a>charlantes</a>
-              </Link>
+              <Link href="/#charlantes">charlantes</Link>
             </li>
             <li>
-              <Link href="/blog">
-                <a>blog</a>
-              </Link>
+              <Link href="/blog">blog</Link>
             </li>
           </ul>
         </div>
@@ -78,23 +68,23 @@ export default function Navbar() {
         <div className={`navbar__menu_mobile ${isOpen ? 'is-active' : ''}`}>
           <ul>
             <li>
-              <Link href="/">
-                <a onClick={() => setIsOpen(false)}>inicio</a>
+              <Link href="/" onClick={() => setIsOpen(false)}>
+                inicio
               </Link>
             </li>
             <li>
-              <Link href="/pivoandcode">
-                <a onClick={() => setIsOpen(false)}>pivoandcode</a>
+              <Link href="/pivoandcode" onClick={() => setIsOpen(false)}>
+                pivoandcode
               </Link>
             </li>
             <li>
-              <Link href="/#charlantes">
-                <a onClick={() => setIsOpen(false)}>charlantes</a>
+              <Link href="/#charlantes" onClick={() => setIsOpen(false)}>
+                charlantes
               </Link>
             </li>
             <li>
-              <Link href="/blog">
-                <a onClick={() => setIsOpen(false)}>blog</a>
+              <Link href="/blog" onClick={() => setIsOpen(false)}>
+                blog
               </Link>
             </li>
           </ul>
@@ -129,55 +119,8 @@ export default function Navbar() {
         .navbar.show {
           transform: translateY(0);
         }
-        .navbar__logo {
-          display: flex;
-          align-items: center;
-        }
-        .navbar__logo a {
-          font-size: 2rem;
-          font-weight: 100;
-          background: #7db392; /* fallback for old browsers */
-          background: -webkit-linear-gradient(
-            to right,
-            #7db392 20%,
-            #345a7c
-          ); /* Chrome 10-25, Safari 5.1-6 */
-          background: linear-gradient(
-            to right,
-            #7db392 10%,
-            #345a7c
-          ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-          -webkit-background-clip: text;
-          background-clip: text;
-          color: transparent;
-        }
-
-        .navbar__logo a span:first-child {
-          font-weight: bold;
-        }
-        .navbar__menu {
-          display: flex;
-          align-items: center;
-        }
-        .navbar__menu ul {
-          display: flex;
-          align-items: center;
-          list-style: none;
-          margin: 0;
-          padding: 0;
-        }
-        .navbar__menu ul li {
-          margin-right: 1rem;
-        }
-        .navbar__menu ul li a {
-          color: #dcdcdc;
-          text-decoration: none;
-          font-size: 0.9rem;
-          transition: all 0.3s ease-in-out;
-        }
-        .navbar__menu ul li a:hover {
-          color: #7db392;
-        }
+      
+       
         .navbar__menu_mobile {
           display:flex;
           position:absolute;

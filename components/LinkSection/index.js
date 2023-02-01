@@ -5,14 +5,12 @@ export default function LinkSection({ link, text }) {
   return (
     <>
       <Link href={link}>
-        <a>
-          <div className="ver-mas">
-            <span> {text} </span>
-            <span>
-              <RightChevron width={'25'} fill={'#dcdcdc'} height={'25'} />{' '}
-            </span>
-          </div>
-        </a>
+        <div className="ver-mas">
+          <span> {text} </span>
+          <span>
+            <RightChevron width={'25'} fill={'#dcdcdc'} height={'25'} />{' '}
+          </span>
+        </div>
       </Link>
       <style jsx>{`
         .ver-mas {

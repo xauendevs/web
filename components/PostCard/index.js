@@ -1,5 +1,6 @@
+import { format } from 'date-fns'
 import Link from 'next/link'
-
+import styles from './PostCard.module.css'
 export default function PostCard({
   title,
   image,
@@ -14,25 +15,30 @@ export default function PostCard({
       <Link href={`/post/${slug}`}>
         <div className="card card-1">
           <div className="card-img"></div>
-          <a href={`/post/${slug}`} className="card-link">
+          <div className="card-link">
             <div
               className="card-img-hovered"
-              style={{ backgroundImage: 'url(/img/posts/' + image + ')' }}
+              style={{ backgroundImage: 'url(' + image + ')' }}
             ></div>
-          </a>
+          </div>
+
           <div className="card-info">
             <div className="card-about">
-              <div className="card-time">{date}</div>
+              <div className="card-time">
+                {format(new Date(date), 'dd/MM/yyyy')}
+              </div>
             </div>
-            <h1 className="card-title">{title}</h1>
+            <h1 className="card-title" title={title}>
+              {title}
+            </h1>
             <div className="card-creator">
-              by <a href="">{author}</a>
+              by <span>{author}</span>
             </div>
             <div className="card-tags">
               {tags.slice(0, 6).map((tag) => (
-                <a key={tag} className="card-tag tag-news">
+                <span key={tag} href="/" className={styles.card_tag}>
                   {tag}
-                </a>
+                </span>
               ))}
             </div>
           </div>
@@ -115,6 +121,12 @@ export default function PostCard({
           padding-bottom: 0.75rem;
           transition: all 350ms ease-in-out;
           padding: 0.75rem;
+          -webkit-line-clamp: 2;
+          overflow: hidden;
+          text-overflow: clip;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          max-height: 5.3rem;
         }
         .card .card-info .card-creator {
           padding-bottom: 0.75rem;

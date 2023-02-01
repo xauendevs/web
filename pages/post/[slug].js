@@ -1,37 +1,34 @@
-import fs from 'fs'
-import matter from 'gray-matter'
+import { format } from 'date-fns'
+import glcms from 'github-like-cms'
 import hljs from 'highlight.js'
 import BlogLayout from 'layouts/blog_layout'
 import md from 'markdown-it'
 import Head from 'next/head'
 
-const Post = ({ slug, frontmatter, content }) => {
+const Post = ({ slug, post }) => {
   return (
     <>
       <Head>
-        <title>{frontmatter.title}</title>
+        <title>{post.title}</title>
         <meta
           property="og:image"
-          content={`https://xauendevs.vercel.app/img/posts/${frontmatter.image}`}
+          content={`https://xauendevs.vercel.app/img/posts/${post.image}`}
         />
-        <meta property="og:description" content={`${frontmatter.metaDesc}`} />
+        <meta property="og:description" content={`${post.description}`} />
 
-        <title>XauenDevs 🫒 {frontmatter.title}</title>
-        <meta name="description" content={`${frontmatter.metaDesc}`} />
+        <title>XauenDevs 🫒 {post.title}</title>
+        <meta name="description" content={`${post.description}`} />
 
         <meta
           property="og:url"
           content={`https://xauendevs.vercel.app/post/${slug}`}
         />
         <meta property="og:type" content="website" />
-        <meta
-          property="og:title"
-          content={`XauenDevs 🫒 ${frontmatter.title}`}
-        />
-        <meta property="og:description" content={`${frontmatter.metaDesc}`} />
+        <meta property="og:title" content={`XauenDevs 🫒 ${post.title}`} />
+        <meta property="og:description" content={`${post.description}`} />
         <meta
           property="og:image"
-          content={`https://xauendevs.vercel.app/img/posts/${frontmatter.image}`}
+          content={`https://xauendevs.vercel.app/img/posts/${post.image}`}
         />
 
         <meta
@@ -44,33 +41,27 @@ const Post = ({ slug, frontmatter, content }) => {
           property="twitter:url"
           content={`https://xauendevs.vercel.app/post/${slug}`}
         />
-        <meta
-          name="twitter:title"
-          content={`XauenDevs 🫒 ${frontmatter.title}`}
-        />
-        <meta name="twitter:description" content={`${frontmatter.metaDesc}`} />
+        <meta name="twitter:title" content={`XauenDevs 🫒 ${post.title}`} />
+        <meta name="twitter:description" content={`${post.desription}`} />
         <meta
           name="twitter:image"
-          content={`https://xauendevs.vercel.app/img/posts/${frontmatter.image}`}
+          content={`https://xauendevs.vercel.app/img/posts/${post.image}`}
         />
       </Head>
       <div className="content">
         <div className="header-post">
           <div className="header-post-image">
-            <img
-              src={`/img/posts/${frontmatter.image}`}
-              alt={frontmatter.title}
-            />
+            <img src={`${post.image}`} alt={post.title} />
           </div>
           <div className="header-post-description">
-            <small> {frontmatter.author}</small>
-            <small>{frontmatter.date}</small>
+            <small> {post.author.login}</small>
+            <small>{format(new Date(post.created_at), 'dd/MM/yyyy')}</small>
             <small>
-              {frontmatter.tags.map((tag, index) => {
+              {post.tags.map((tag, index) => {
                 return `#${tag} `
               })}
             </small>
-            <h1>{frontmatter.title}</h1>
+            <h1>{post.title}</h1>
           </div>
         </div>
 
@@ -78,19 +69,7 @@ const Post = ({ slug, frontmatter, content }) => {
           className="content-post"
           dangerouslySetInnerHTML={{
             __html:
-              md({
-                langPrefix: 'hljs ',
-
-                highlight: function (str, lang) {
-                  if (lang && hljs.getLanguage(lang)) {
-                    try {
-                      return hljs.highlight(str, { language: lang }).value
-                    } catch (__) {}
-                  }
-
-                  return '' // use external default escaping
-                }
-              }).render(content) +
+              post.content +
               `<style>
                 .content-post img{
                  max-width:100%;
@@ -163,24 +142,23 @@ Post.Layout = BlogLayout
 export default Post
 
 export async function getStaticProps({ params: { slug } }) {
-  const fileName = fs.readFileSync(`posts/${slug}.md`, 'utf-8')
-  const { data: frontmatter, content } = matter(fileName)
+  // const fileName = fs.readFileSync(`posts/${slug}.md`, 'utf-8')
+  // const { data: post, content } = matter(fileName)
+  console.log('slug')
+  const post = await glcms.generatePages('xauendevs', 'web', slug)
+
   return {
     props: {
       slug,
-      frontmatter,
-      content
+      post
     }
   }
 }
 
 export async function getStaticPaths() {
-  const files = fs.readdirSync('posts')
-  const paths = files.map((fileName) => ({
-    params: {
-      slug: fileName.replace('.md', '')
-    }
-  }))
+  const paths = await glcms.generatePaths('xauendevs', 'web')
+  console.log('paths')
+  console.log(paths)
   return {
     paths,
     fallback: false

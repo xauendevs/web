@@ -1,0 +1,50 @@
+.navbar__logo {
+  display: flex;
+  align-items: center;
+}
+.navbar__logo a {
+  font-size: 2rem;
+  font-weight: 100;
+  background: #7db392; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #7db392 20%,
+    #345a7c
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #7db392 10%,
+    #345a7c
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.navbar__logo a span:first-child {
+  font-weight: bold;
+}
+
+.navbar__menu {
+  display: flex;
+  align-items: center;
+}
+.navbar__menu ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.navbar__menu ul li {
+  margin-right: 1rem;
+}
+.navbar__menu ul li a {
+  color: #dcdcdc;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease-in-out;
+}
+.navbar__menu ul li a:hover {
+  color: #7db392;
+}
