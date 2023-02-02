@@ -19,6 +19,7 @@ export default function SponsorItem({ name, url, logo }) {
           height: 200px;
           filter: grayscale(1);
           transition: all 0.5s ease;
+          position: relative;
         }
         .sponsor-item:hover {
           cursor: pointer;
