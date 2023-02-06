@@ -54,6 +54,11 @@ export default function PostCard({
           background: white;
           transition: all 300ms ease-in-out;
         }
+        @media (prefers-color-scheme: dark) {
+          .card {
+            background: #333;
+          }
+        }
         .card .card-img {
           visibility: hidden;
           width: 100%;

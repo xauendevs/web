@@ -18,6 +18,14 @@ body {
   scroll-behavior: smooth;
 }
 
+@media (prefers-color-scheme: dark) {
+  html,
+  body {
+    background-color: #222;
+    color: #eee;
+  }
+}
+
 a {
   color: inherit;
   text-decoration: none;

@@ -26,6 +26,12 @@ export default function SectionHome({ title, children, className, id }) {
           background-attachment: fixed;
           background-size: cover;
         }
+        @media (prefers-color-scheme: dark) {
+          section {
+            background-color: #222;
+            color: #eee;
+          }
+        }
 
         section.contributors {
           color: #ebecf0;

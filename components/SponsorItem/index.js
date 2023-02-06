@@ -26,6 +26,13 @@ export default function SponsorItem({ name, url, logo }) {
           transform: scale(1.025);
           filter: grayscale(0);
         }
+
+        @media (prefers-color-scheme: dark) {
+          .sponsor-item {
+            background-color: #eee;
+            padding: 10px;
+          }
+        }
       `}</style>
     </>
   )

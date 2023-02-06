@@ -26,6 +26,11 @@ export default function Blog({ posts, totalPosts, actualPage }) {
           flex-direction: column;
           margin-bottom: 200px;
         }
+        @media (prefers-color-scheme: dark) {
+          section {
+            background-color: #222;
+          }
+        }
         h1 {
           text-align: center;
         }
