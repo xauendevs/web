@@ -65,10 +65,10 @@ export default function Home({ posts, charlantes, sponsors, contributors }) {
       <SectionHome className={'blog'} title={'Últimos Posts'}>
         <PostsListHome isHome={'true'} posts={posts} />
       </SectionHome>
-      {/*
+
       <SectionHome className={'contributors'} title={'Contribuidores'}>
         <Contributors contributors={contributors} />
-      </SectionHome> */}
+      </SectionHome>
     </>
   )
 }

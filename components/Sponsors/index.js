@@ -15,6 +15,7 @@ export default function Sponsors({ sponsors }) {
       <style jsx>{`
         .sponsors {
           display: flex;
+          gap: 2rem;
         }
       `}</style>
     </>

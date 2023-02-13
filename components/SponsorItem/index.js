@@ -10,6 +10,7 @@ export default function SponsorItem({ name, url, logo }) {
             src={'/img/sponsors/' + logo}
             alt={name + ' logo'}
             fill
+            style={{ objectFit: 'contain' }}
           />
         </a>
       </div>
