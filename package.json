@@ -11,7 +11,7 @@
   "dependencies": {
     "@vercel/analytics": "^0.1.8",
     "date-fns": "^2.29.3",
-    "github-like-cms": "file:../github-like-cms",
+    "github-like-cms": "^0.0.5",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.5.1",
     "markdown-it": "^13.0.1",
