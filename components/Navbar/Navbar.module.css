@@ -48,3 +48,63 @@
 .navbar__menu ul li a:hover {
   color: #7db392;
 }
+.navbar__menu_hamburguer {
+  display: none;
+  z-index: 2;
+}
+
+.menu-toggle {
+  position: relative;
+  display: block;
+  width: 25px;
+  height: 18px;
+  background: transparent;
+  border: none !important;
+  border-top: 2px solid !important;
+  border-bottom: 2px solid !important;
+  color: #fcfcfc;
+  font-size: 0;
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+}
+.menu-toggle:before,
+.menu-toggle:after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: currentColor;
+  transform: translate(-50%, -50%);
+  transition: transform 0.25s ease-in-out;
+}
+
+.menu-toggle:hover {
+  color: #fcfcfc;
+}
+
+.menu-toggle.is-active {
+  border-color: transparent !important;
+}
+.menu-toggle.is-active:before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.menu-toggle.is-active:after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .navbar__logo a {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 576px) {
+  .navbar__menu {
+    display: none;
+  }
+  .navbar__menu_hamburguer {
+    display: block;
+  }
+}

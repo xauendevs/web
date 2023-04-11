@@ -57,9 +57,11 @@ export default function Navbar() {
             </li>
           </ul>
         </div>
-        <div className="navbar__menu_hamburguer">
+        <div className={styles.navbar__menu_hamburguer}>
           <button
-            className={`menu-toggle ${isOpen ? 'is-active' : ''}`}
+            className={`${styles['menu-toggle']} ${
+              isOpen ? styles['is-active'] : ''
+            }`}
             onClick={() => setIsOpen(!isOpen)}
           >
             Menu
@@ -119,16 +121,15 @@ export default function Navbar() {
         .navbar.show {
           transform: translateY(0);
         }
-      
-       
+
         .navbar__menu_mobile {
-          display:flex;
-          position:absolute;
-          top:0;
-          left:0;
-          bottom:0;
-          right:0;  
-          transform:translateX(-100%);
+          display: flex;
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          transform: translateX(-100%);
           height: calc(100vh);
           flex-direction: column;
           justify-content: center;
@@ -141,78 +142,15 @@ export default function Navbar() {
           transition: all 0.3s ease-in-out;
         }
 
-        .navbar__menu_mobile li{
+        .navbar__menu_mobile li {
           margin-bottom: 1rem;
-          list-style-type:none;
+          list-style-type: none;
           font-size: 2rem;
-
         }
 
         .navbar__menu_mobile.is-active {
           display: flex;
           transform: translateX(0);
-
-        }
-        .navbar__menu_hamburguer{
-          display:none;
-          z-index: 2;
-        }
-        .menu-toggle {
-          position: relative;
-          display: block;
-          width: 25px;
-          height: 18px;
-          background: transparent;
-          border-top: 2px solid;
-          border-bottom: 2px solid;
-          color: #fcfcfc;
-          font-size: 0;
-          transition: all 0.25s ease-in-out;
-        }
-        .menu-toggle:before, .menu-toggle:after {
-          content: "";
-          display: block;
-          width: 100%;
-          height: 2px;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          background: currentColor;
-          transform: translate(-50%, -50%);
-          transition: transform 0.25s ease-in-out;
-        }
-
-        button:hover {
-          color: #fcfcfc;
-        }
-
-        button.is-active {
-          border-color: transparent;
-        }
-        button.is-active:before {
-          transform: translate(-50%, -50%) rotate(45deg);
-        }
-        button.is-active:after {
-          transform: translate(-50%, -50%) rotate(-45deg);
-        }
-
-
-        button {
-          border: none;
-          cursor: pointer;
-          outline: none;
-        }
-        @media (max-width: 768px) {
-          .navbar__logo a {
-            font-size: 1.5rem;
-          }
-        }
-        @media (max-width: 576px) {
-            .navbar__menu {
-              display:none
-            }
-            .navbar__menu_hamburguer{
-          display:block
         }
       `}</style>
     </>

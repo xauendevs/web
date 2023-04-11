@@ -1,7 +1,7 @@
 import { Analytics } from '@vercel/analytics/react'
 import MainLayout from 'layouts/main_layout'
 import Head from 'next/head'
-import '../node_modules/highlight.js/styles/atom-one-dark.css'
+import 'node_modules/highlight.js/styles/atom-one-dark.css'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {

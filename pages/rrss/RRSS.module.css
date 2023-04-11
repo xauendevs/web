@@ -1,0 +1,31 @@
+.section {
+  padding: 6rem 4rem;
+  display: grid;
+
+  gap: 0px 0px;
+}
+
+.section section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.section section a {
+  display: flex;
+  align-items: center;
+  flex: 2 1 auto;
+  gap: 1rem;
+  border: 1px solid black;
+  max-width: 250px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.section section a:hover {
+  transform: scale(1.05) rotate(3deg);
+}
+
+.section section a span:first-child {
+  font-size: 1.5rem;
+}
