@@ -10,7 +10,7 @@ export async function getServerSideProps({ res }) {
   return {
     redirect: {
       destination:
-        'https://saraos.tech/@xauendevs/events/xxi-pivoandcode-intercambio-de-informacion-en-el-iot-avj39wm7t6fn2h4d9llkz',
+        'https://saraos.tech/@xauendevs/events/xxii-pivoandcode-descubriendo-sveltekit-zrvr87pj4hhg72rx88eis',
       permanent: true
     }
   }
