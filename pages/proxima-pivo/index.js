@@ -10,7 +10,7 @@ export async function getServerSideProps({ res }) {
   return {
     redirect: {
       destination:
-        'https://saraos.tech/@xauendevs/events/xxiii-pivoandcode-graph-databases-con-neo4j-7k804py8edjhkoyx0gai8',
+        'https://saraos.tech/@xauendevs/events/xxiv-pivoandcode-osint-osant-cada-dia-te-busco-mas-ku8fjnb0e0uhephy98p65',
       permanent: true
     }
   }
