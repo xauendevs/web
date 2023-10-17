@@ -10,7 +10,7 @@ export async function getServerSideProps({ res }) {
   return {
     redirect: {
       destination:
-        'https://saraos.tech/@xauendevs/events/xxiv-pivoandcode-osint-osant-cada-dia-te-busco-mas-ku8fjnb0e0uhephy98p65',
+        'https://saraos.tech/@xauendevs/events/xxv-pivoandcode-de-0-a-heroe-con-mlops-o4l5ivb9fdga2gy5yfv80',
       permanent: true
     }
   }
