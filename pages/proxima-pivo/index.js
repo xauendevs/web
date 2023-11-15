@@ -10,7 +10,7 @@ export async function getServerSideProps({ res }) {
   return {
     redirect: {
       destination:
-        'https://saraos.tech/@xauendevs/events/xxv-pivoandcode-de-0-a-heroe-con-mlops-o4l5ivb9fdga2gy5yfv80',
+        'https://saraos.tech/@xauendevs/events/xxvi-pivoandcode-nbomber-haz-pruebas-de-carga-a-un-sistema-a3u7w1kfjv0lpdrdmax34',
       permanent: true
     }
   }
