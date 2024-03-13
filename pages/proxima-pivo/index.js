@@ -10,7 +10,7 @@ export async function getServerSideProps({ res }) {
   return {
     redirect: {
       destination:
-        'https://saraos.tech/@xauendevs/events/xxvi-pivoandcode-nbomber-haz-pruebas-de-carga-a-un-sistema-a3u7w1kfjv0lpdrdmax34',
+        'https://saraos.tech/@xauendevs/events/xxvi-pivoandcode-homelabbing-tu-nube-en-casa-para-sobrevivir-a-la-edad-de-la-informacion-v7jydo4wo8dwhk29u8q13',
       permanent: true
     }
   }
