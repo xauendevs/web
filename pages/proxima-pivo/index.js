@@ -10,7 +10,7 @@ export async function getServerSideProps({ res }) {
   return {
     redirect: {
       destination:
-        'https://saraos.tech/@xauendevs/events/xxvii-pivoandcode-homelabbing-tu-nube-en-casa-para-sobrevivir-a-la-edad-de-la-informacion-v7jydo4wo8dwhk29u8q13',
+        'https://saraos.tech/@xauendevs/events/xxviii-pivoandcode-tras-los-pixeles-descifrando-el-codigo-de-la-realidad-virtual-y-aumentada-o8xhreprq7ofr60tmfiwg',
       permanent: true
     }
   }
