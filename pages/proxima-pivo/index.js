@@ -10,7 +10,7 @@ export async function getServerSideProps({ res }) {
   return {
     redirect: {
       destination:
-        'https://saraos.tech/@xauendevs/events/xxviii-pivoandcode-tras-los-pixeles-descifrando-el-codigo-de-la-realidad-virtual-y-aumentada-o8xhreprq7ofr60tmfiwg',
+        'https://saraos.tech/@xauendevs/events/xxix-pivoandcode-diseno-ui-ux-para-dummies-desarrolladores-dbp4clj8gddf96hzmh0mf',
       permanent: true
     }
   }
