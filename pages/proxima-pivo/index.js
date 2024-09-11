@@ -10,7 +10,7 @@ export async function getServerSideProps({ res }) {
   return {
     redirect: {
       destination:
-        'https://saraos.tech/@xauendevs/events/xxx-pivoandcode-extreme-programming-el-superpoder-que-necesitas-en-el-desarrollo-de-software-k5fwvt86k9774uzkcnfmc',
+        'https://saraos.tech/@xauendevs/events/31-pivoandcode-arquitecturas-limpias-separacion-del-negocio-y-los-detalles-de-la-infraestructura-umv2eugtimhvdq4f126d6',
       permanent: true
     }
   }
